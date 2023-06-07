@@ -1,1 +1,1 @@
-export { default as PrivacyPolicy } from "./privacyPolicy.astro";
+export { default as PrivacyPolicy } from "./PrivacyPolicySection.astro";
