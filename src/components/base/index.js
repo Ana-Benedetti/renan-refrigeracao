@@ -1,4 +1,3 @@
-export * from "./BaseButton";
-export * from "./BaseLinkNav";
+export * from "./BaseLink";
 export * from "./BaseLogo";
 export * from "./BaseText";
