@@ -6,6 +6,8 @@ module.exports = {
 			fontFamily: {
 				nova: ['NovaFlat-Regular', 'ui-sans-serif'],
 				ubuntu: ['Ubuntu-Regular', 'ui-sans-serif'],
+				ubuntuLight: ['Ubuntu-Light', 'ui-sans-serif'],
+				ubuntuBold: ['Ubuntu-Bold', 'ui-sans-serif'],
 			},
 			colors: {
 				darkGreen: 'rgb(var(--darkGreen) / <alpha-value>)',
