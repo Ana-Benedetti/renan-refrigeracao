@@ -14,4 +14,20 @@
     font-display: swap;
   }
 
+  @font-face {
+    font-family: 'Ubuntu-Bold';
+    src: url('../../public/fonts/Ubuntu/Ubuntu-Bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ubuntu-Light';
+    src: url('../../public/fonts/Ubuntu/Ubuntu-Light.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
   

@@ -1,0 +1,111 @@
+---
+const { class: className, tag, variation } = Astro.props;
+
+const dynamicClasses = [`${tag}`, className, variation ? `is-${variation}` : ""];
+---
+
+{
+    tag === p ? (
+      <p class:list={dynamicClasses}>
+        <slot />
+      </p>
+    ) : tag === h2 ? (
+      <h2 class:list={dynamicClasses}>
+        <slot />
+      </h2>
+    ) : tag === h3 ? (
+      <h3 class:list={dynamicClasses}>
+        <slot />
+      </h3>
+    ) : tag === span ? (
+      <span class:list={dynamicClasses}>
+        <slot />
+      </span>
+    ) : tag === h1 ? (
+      <h1 class:list={dynamicClasses}>
+        <slot />
+      </h1>
+    ) : (
+      <p class:list={dynamicClasses}>
+        <slot />
+      </p>
+    )
+  }
+
+  <style>
+    .h1,
+    .is-h2-banner,
+    .is-p-banner,
+    .is-p-thebenedettifooter,
+    .is-p-theFooter,
+    .is-p-hero,
+    .is-p-link,
+    .is-p-linkfooter
+    .is-p-servicecard {
+        @apply relative text-neutral;
+    }
+
+    .h2,
+    .h3,
+    .p,
+    .span,
+    .is-p-actingcard,
+    .is-p-activelinknavbar,
+    .is-p-calltoaction,
+    .is-p-linknavbar,
+    .is-p-specialist {
+        @apply relative text-navyBlue;
+    }
+
+    .h1,
+    .h2,
+    .h3 {
+        @apply font-nova;
+    }
+
+    .p,
+    .span,
+    .is-h2-banner,
+    .is-p-actingcard,
+    .is-p-banner,
+    .is-p-calltoaction,
+    .is-p-linknavbar,
+    .is-p-servicecard, 
+    .is-p-specialist
+    .is-p-thebenedettifooter,
+    .is-p-thefooter {
+        @apply font-ubuntu;
+    }
+
+    .is-p-hero {
+        @apply font-ubuntuLight leading-10;
+    }
+    
+    .is-p-link,
+    .is-p-activelinknavbar {
+        @apply font-ubuntuBold;
+    }
+
+    .h2 {
+        @apply text-[56px];
+    }
+
+    .h3 {
+        @apply text-3xl;
+    }
+
+    .is-p-actingcard {
+        @apply text-xl leading-7;
+    }
+
+    .is.p-banner {
+        @apply text-[28px] leading-10;
+    }
+
+    .is-p-link,
+    .is-p-linkfooter,
+    .is-p-linknavbar,
+    .is-p-servicecard {
+        @apply text-[26px];
+    }
+  </style> 
