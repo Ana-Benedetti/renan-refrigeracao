@@ -1,5 +1,73 @@
 ---
+const { class: className, href, referrerpolicy, target, variation } = Astro.props;
 
+const dynamicClasses = [className, variation ? `is-${variation}` : ""];
 ---
 
-<a><slot/></a>
+{
+  href && (
+    <a
+      class:list={dynamicClasses}
+      href={href}
+      referrerpolicy={referrerpolicy ?? "strict-origin-when-cross-origin"}
+      rel="noopener"
+      target={target ?? "_self"}
+    >
+      <slot />
+    </a>
+  )
+}
+
+<style>
+  .is-link,
+  .is-link-white {
+    @apply font-ubuntu
+    drop-shadow-[2px_3px_2px_rgba(0,0,0,0.25)]
+    transition-all
+    ease-in-out;
+  }
+
+  .is-link {
+    @apply text-navyBlue hover:font-ubuntuBold;
+  }
+
+  .is-link-white {
+    @apply text-white hover:font-ubuntuBold;
+  }
+
+  .is-link-navyblue,
+  .is-link-navyblueicon,
+  .is-link-mediumgreen,
+  .is-link-whiteicon {
+    @apply w-fit
+    min-w-[180px]
+    justify-center	
+    rounded-xl
+    py-3	
+    text-center
+    font-ubuntuBold
+    text-xl 
+    transition-all 
+    duration-300
+    ease-in-out
+    hover:shadow-[0px_4px_4px_rgba(0,0,0,0.25)]
+    active:shadow-none;
+  }
+
+  .is-link-mediumgreen {
+    @apply bg-mediumGreen;
+  }
+
+  .is-link-navyblue,
+  .is-link-navyblueicon {
+    @apply bg-navyBlue;
+  }
+
+  .is-link-whiteicon {
+    @apply bg-neutral
+    border-navyBlue
+    border-solid
+    opacity-70;
+  }
+
+</style>
