@@ -1,8 +1,8 @@
 :root {
---darkGreen: rgb(2, 73, 89);
---gray: rgb(217, 217, 217);
---lightGreen: rgb(42, 188, 188);
---mediumGreen: rgb(2, 103, 115);
---navyBlue:rgb(1, 40, 64);
---neutral: #f2eccf;
+--darkGreen: 2 73 89;
+--gray: 217 217 217;
+--lightGreen: 42 188 188;
+--mediumGreen: 2 103 115;
+--navyBlue:1 40 64;
+--neutral: 242 236 207;
 }

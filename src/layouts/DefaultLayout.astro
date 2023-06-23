@@ -1,0 +1,24 @@
+---
+import DependenciesLayout from "./DependenciesLayout.astro";
+---
+
+<html lang="pt-BR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Renan Refrigeração</title>
+  </head>
+
+  <body class="body">
+    <DependenciesLayout>
+
+      <main class="main">
+        <slot />
+      </main>
+
+    </DependenciesLayout>
+  </body>
+</html>
+
