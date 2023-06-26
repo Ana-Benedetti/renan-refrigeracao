@@ -1,1 +1,56 @@
+---
+import Logo from "../../../assets/images/Logo.webp";
+import LogoMobile from "../../../assets/images/logo-mobile.webp";
+import LogoTablet from "../../../assets/images/logo-tablet.webp";
+---
 
+<header class="header">
+    <div class="renan-header">
+        <img src={LogoMobile} alt="Renan Refrigeração logo." class="logo_mobile" />
+        <img src={LogoTablet} alt="Renan Refrigeração logo." class="logo_tablet" />
+        <img src={Logo} alt="Renan Refrigeração logo." class="logo" />
+    </div>
+</header>
+
+<style>
+    .header {
+        @apply flex justify-start items-center w-full h-16 bg-gray/[0.6];
+    }
+
+    .logo_tablet, .logo {
+        @apply hidden;
+    }
+
+    .logo_mobile {
+        @apply ml-6;
+    }
+
+    @media (min-width: 450px) {
+        .header {
+            @apply h-20;
+        }
+
+        .logo_tablet {
+            @apply flex ml-10;
+        }
+
+        .logo_mobile {
+            @apply hidden;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .header {
+            @apply h-28;
+        } 
+
+        .logo {
+            @apply flex ml-32;
+        }
+
+        .logo_tablet {
+            @apply hidden;
+        }
+    }
+
+</style>
