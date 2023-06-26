@@ -5,56 +5,141 @@ import HeroImage from "../../assets/images/hero-image.webp";
 import HeroImageMobile from "../../assets/images/hero-image-mobile.webp";
 
 ---  
-<section>
+<section class="hero-container">
     <TheNavBar />
-</section>
-
-
-
-<!-- <section class="hero-container">
-    <header class="header">
-        <img src={ Logo } alt="LogoRenanRefrigeracao" class="logo-hero" />
-    </header>  
-    <img src={ HeroImage } alt="Técnico em Refrigeração" class="image-hero" /> 
-    <img src={ HeroImageMobile } alt="Técnico em Refrigeração" class="image-hero-mobile" /> 
-    <div class="banner-hero">
-        <div class="text-banner">
-            <BaseText tag="h1" class="h1" variation="h1">
-                Refrigeração e Climatização de qualidade é com a gente!
-            </BaseText>
-
-            <BaseText tag="p" class="p-hero" variation="p-hero">
-                Atendimento profisisonal especializado em Refrigeração e Climatização, soluções inteligentes para sua empresa e o conforto da sua família. <strong class="strong">12 anos</strong> de experiência! 
-            </BaseText>
-        </div>
-        <BaseLink href="https://wa.me/message/CVQIECXMWBIPN1" target="_blank" class="base-link" variation="link-navyblueicon">Saiba Mais</BaseLink>
+    <div class="hero">
+        <BaseText tag="h1" class="h1" variation="h1">
+            Refrigeração e Climatização de qualidade é com a gente!
+        </BaseText>
+        <BaseText tag="p" class="p-hero" variation="p-hero">
+            Atendimento profisisonal especializado em Refrigeração e Climatização, soluções inteligentes para sua empresa e o conforto da sua família. <br/><strong class="strong">12 anos</strong> de experiência! 
+        </BaseText>
+        <BaseLink href="https://wa.me/message/CVQIECXMWBIPN1" target="_blank" class="link" variation="link-navyblueicon">
+            Saiba Mais
+        </BaseLink>
     </div>
 </section>
 
-  <style>
+<style>
     .hero-container {
-        @apply flex;
+        @apply 
+        bg-[url('../../assets/images/hero-image-mobile.webp')]
+        bg-cover
+        flex 
+        flex-col 
+        h-screen;
     }
 
-    .image-hero {
-        @apply hidden min-w-full h-screen;
+    .hero {
+        @apply 
+        flex 
+        flex-col 
+        gap-10
+        mt-10
+        p-6
+        w-auto;
     }
 
-    .image-hero-mobile {
-        @apply flex w-full h-screen;
+    .h1 {
+        @apply font-nova text-3xl text-neutral;
     }
 
-    .image-hero-tablet {
-        @apply hidden w-full h-screen;
+    .p-hero {
+        @apply font-ubuntuLight text-neutral text-sm;
     }
 
-    .header {
-        @apply bg-gray/[0.6] h-16 w-screen absolute top-0 flex items-center justify-start z-10;
+    .strong {
+        @apply font-bold font-ubuntuBold; 
     }
 
-    .logo-hero {
-        @apply relative flex w-40 h-12 items-center ml-4;
+    .link {
+        @apply 
+        bg-navyBlue 
+        flex
+        font-ubuntuBold
+        items-center 
+        justify-center 
+        text-center 
+        text-neutral 
+        text-xs;
     }
+
+    @media (min-width: 450px) {
+        .hero-container {
+        @apply 
+        bg-[url('../../assets/images/hero-image-tablet.webp')]
+    }
+
+    .hero {
+        @apply 
+        max-w-[480px]
+        mt-12
+        p-10
+        w-auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero {
+        @apply 
+        gap-14
+        max-w-[600px]
+        mt-12
+        p-14;
+    }
+
+
+    .h1 {
+        @apply text-4xl;
+    }
+
+    .p-hero {
+        @apply max-w-md text-base;
+    }
+
+    .link {
+        @apply 
+        text-sm
+        w-52;
+    }
+}   
+
+@media (min-width: 1024px) {
+    .hero-container {
+        @apply 
+        bg-[url('../../assets/images/hero-image.webp')]
+    }
+
+    .hero {
+        @apply 
+        gap-16
+        max-w-[1100px]
+        ml-[84px]
+        mt-4
+        p-14;
+    }
+
+
+    .h1 {
+        @apply leading-tight text-7xl;
+    }
+
+    .p-hero {
+        @apply leading-[50px] max-w-4xl text-[32px];
+    }
+
+    .link {
+        @apply 
+        text-xl
+        w-[300px]
+        h-[70px];
+    }
+}   
+</style>
+
+<!-- 
+  <style>
+    
 
     .banner-hero {
         @apply flex flex-col justify-between gap-10 absolute top-32 left-2;
@@ -63,15 +148,7 @@ import HeroImageMobile from "../../assets/images/hero-image-mobile.webp";
     .text-banner {
         @apply flex flex-col gap-10 justify-start p-1.5;
     }
-     
-    .h1 {
-        @apply font-nova text-3xl text-neutral w-[250px];
-    }
-
-    .p-hero {
-        @apply text-neutral text-sm w-[230px];
-    }
-
+   
     .strong {
         @apply font-ubuntuBold font-bold;
     }
