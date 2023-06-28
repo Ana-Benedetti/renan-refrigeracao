@@ -1,8 +1,7 @@
 ---
 import { BaseLink, BaseText } from "../../components/base";
 import { TheNavBar } from "../../components/unique";
-import HeroImage from "../../assets/images/hero-image.webp";
-import HeroImageMobile from "../../assets/images/hero-image-mobile.webp";
+import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
 
 ---  
 <section class="hero-container">
@@ -12,10 +11,10 @@ import HeroImageMobile from "../../assets/images/hero-image-mobile.webp";
             Refrigeração e Climatização de qualidade é com a gente!
         </BaseText>
         <BaseText tag="p" class="p-hero" variation="p-hero">
-            Atendimento profisisonal especializado em Refrigeração e Climatização, soluções inteligentes para sua empresa e o conforto da sua família. <br/><strong class="strong">12 anos</strong> de experiência! 
+            Atendimento profisisonal especializado em Refrigeração e Climatização, soluções inteligentes para sua empresa e o conforto da sua família. <strong class="strong">12 anos</strong> de experiência! 
         </BaseText>
         <BaseLink href="https://wa.me/message/CVQIECXMWBIPN1" target="_blank" class="link" variation="link-navyblueicon">
-            Saiba Mais
+            <img class="whatsapp" src={WhatsappImage} >Entre em contato
         </BaseLink>
     </div>
 </section>
@@ -23,29 +22,26 @@ import HeroImageMobile from "../../assets/images/hero-image-mobile.webp";
 <style>
     .hero-container {
         @apply 
-        bg-[url('../../assets/images/hero-image-mobile.webp')]
-        bg-cover
-        flex 
-        flex-col 
-        h-screen;
+        bg-[url('../../assets/images/hero-image-mobile.webp')] bg-cover flex flex-col h-screen;
     }
 
     .hero {
-        @apply 
-        flex 
-        flex-col 
-        gap-10
-        mt-10
-        p-6
-        w-auto;
+        @apply flex flex-col gap-10 p-6 w-auto;
     }
 
     .h1 {
-        @apply font-nova text-3xl text-neutral;
+        @apply font-nova mt-14 text-3xl text-neutral;
+        text-shadow: 2px 2px #012840;
     }
 
     .p-hero {
-        @apply font-ubuntuLight text-neutral text-sm;
+        @apply 
+        font-ubuntu 
+        leading-snug 
+        max-w-[240px]
+        text-neutral 
+        text-xs;
+        text-shadow: 2px 1px #012840;
     }
 
     .strong {
@@ -55,8 +51,17 @@ import HeroImageMobile from "../../assets/images/hero-image-mobile.webp";
     .link {
         @apply 
         bg-navyBlue 
+        cursor-pointer
         flex
         font-ubuntuBold
+        gap-2
+        hover:bg-neutral
+        hover:border-navyBlue 
+        hover:border-4
+        hover:duration-700
+        hover:opacity-70
+        hover:scale-110
+        hover:text-navyBlue
         items-center 
         justify-center 
         text-center 
@@ -64,33 +69,31 @@ import HeroImageMobile from "../../assets/images/hero-image-mobile.webp";
         text-xs;
     }
 
+    .whatsapp {
+        @apply w-5;
+    }
+
     @media (min-width: 450px) {
         .hero-container {
-        @apply 
-        bg-[url('../../assets/images/hero-image-tablet.webp')]
+        @apply bg-[url('../../assets/images/hero-image-tablet.webp')]
     }
 
     .hero {
-        @apply 
-        max-w-[480px]
-        mt-12
-        p-10
-        w-auto;
+        @apply max-w-[480px] mt-5 p-10 w-auto;
+    }
+
+    .p-hero {
+        @apply max-w-[360px] text-sm;
     }
 }
 
 @media (min-width: 768px) {
     .hero {
-        @apply 
-        gap-14
-        max-w-[600px]
-        mt-12
-        p-14;
+        @apply gap-14 max-w-[600px] p-14;
     }
 
-
     .h1 {
-        @apply text-4xl;
+        @apply mt-5 text-4xl;
     }
 
     .p-hero {
@@ -98,159 +101,37 @@ import HeroImageMobile from "../../assets/images/hero-image-mobile.webp";
     }
 
     .link {
-        @apply 
-        text-sm
-        w-52;
+        @apply text-sm w-52;
+    }
+
+    .whatsapp {
+        @apply w-6;
     }
 }   
 
 @media (min-width: 1024px) {
     .hero-container {
-        @apply 
-        bg-[url('../../assets/images/hero-image.webp')]
+        @apply bg-opacity-0 bg-[url('../../assets/images/hero-image.webp')];
     }
 
     .hero {
-        @apply 
-        gap-16
-        max-w-[1100px]
-        ml-[84px]
-        mt-4
-        p-14;
+        @apply gap-16 max-w-[950px] ml-10 p-14;
     }
-
 
     .h1 {
-        @apply leading-tight text-7xl;
-    }
+        @apply leading-tight text-6xl mt-14; 
+   }
 
     .p-hero {
-        @apply leading-[50px] max-w-4xl text-[32px];
+        @apply leading-snug max-w-3xl text-[26px];
     }
 
     .link {
-        @apply 
-        text-xl
-        w-[300px]
-        h-[70px];
+        @apply gap-5 text-xl w-[300px] h-[70px];
+    }
+
+    .whatsapp {
+        @apply w-10;
     }
 }   
 </style>
-
-<!-- 
-  <style>
-    
-
-    .banner-hero {
-        @apply flex flex-col justify-between gap-10 absolute top-32 left-2;
-    }
-
-    .text-banner {
-        @apply flex flex-col gap-10 justify-start p-1.5;
-    }
-   
-    .strong {
-        @apply font-ubuntuBold font-bold;
-    }
-
-    .base-link {
-        @apply flex bg-navyBlue min-w-[140px] h-[40px] text-neutral font-ubuntuBold justify-center text-center items-center text-sm;
-    }
-
-    @media (min-width: 450px) {
-    .image-hero-tablet {
-        @apply flex;
-    }
-   
-    .image-hero-mobile {
-        @apply hidden;
-    }
-    }
-
-    @media (min-width: 768px) {
-    .banner-hero, .text-banner {
-        @apply gap-14 top-40 left-6;
-    }
-
-    .header {
-        @apply h-20;
-    }
-
-    .logo-hero {
-        @apply w-52 h-16 ml-8;
-    }
-
-    .image-hero {
-        @apply flex;
-    }
-
-
-    .image-hero-tablet {
-        @apply hidden;
-    }
-
-    .h1 {
-        @apply text-4xl w-[500px];
-    }
-
-    .p-hero {
-        @apply text-base w-[390px];
-    }
-
-    .base-link {
-        @apply text-xs w-[180px] h-[45px];
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .banner-hero, .text-banner {
-        @apply gap-16 top-64;
-    }
-
-    .header {
-        @apply h-28;
-    }
-
-    .logo-hero {
-        @apply w-72 h-20 ml-8;
-    }
-
-    .h1 {
-        @apply text-5xl w-[700px];
-    }
-
-    .p-hero {
-        @apply text-xl w-[580px];
-    }
-
-    .base-link {
-        @apply text-lg w-[250px] h-[60px];
-    }
-  }
-
-  @media (min-width: 1440px) {
-    .banner-hero, .text-banner {
-        @apply gap-16 top-56 left-20;
-    }
-
-    .header {
-        @apply h-28; 
-    }
-
-    .logo-hero {
-        @apply w-72 h-20 ml-20;
-    }
-
-    .h1 {
-        @apply text-[67px] w-[910px];
-    }
-
-    .p-hero {
-        @apply text-[32px] w-[900px] leading-[50px];
-    }
-
-    .base-link {
-        @apply text-xl w-[300px] h-[70px];
-    }
-  }
-  </style> -->
