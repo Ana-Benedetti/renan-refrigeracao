@@ -1,179 +1,137 @@
 ---
 import { BaseLink, BaseText } from "../../components/base";
 import { TheNavBar } from "../../components/unique";
-import HeroImage from "../../assets/images/hero-image.webp";
-import HeroImageMobile from "../../assets/images/hero-image-mobile.webp";
+import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
 
 ---  
-<section>
+<section class="hero-container">
     <TheNavBar />
-</section>
-
-
-
-<!-- <section class="hero-container">
-    <header class="header">
-        <img src={ Logo } alt="LogoRenanRefrigeracao" class="logo-hero" />
-    </header>  
-    <img src={ HeroImage } alt="Técnico em Refrigeração" class="image-hero" /> 
-    <img src={ HeroImageMobile } alt="Técnico em Refrigeração" class="image-hero-mobile" /> 
-    <div class="banner-hero">
-        <div class="text-banner">
-            <BaseText tag="h1" class="h1" variation="h1">
-                Refrigeração e Climatização de qualidade é com a gente!
-            </BaseText>
-
-            <BaseText tag="p" class="p-hero" variation="p-hero">
-                Atendimento profisisonal especializado em Refrigeração e Climatização, soluções inteligentes para sua empresa e o conforto da sua família. <strong class="strong">12 anos</strong> de experiência! 
-            </BaseText>
-        </div>
-        <BaseLink href="https://wa.me/message/CVQIECXMWBIPN1" target="_blank" class="base-link" variation="link-navyblueicon">Saiba Mais</BaseLink>
+    <div class="hero">
+        <BaseText tag="h1" class="h1" variation="h1">
+            Refrigeração e Climatização de qualidade é com a gente!
+        </BaseText>
+        <BaseText tag="p" class="p-hero" variation="p-hero">
+            Atendimento profisisonal especializado em Refrigeração e Climatização, soluções inteligentes para sua empresa e o conforto da sua família. <strong class="strong">12 anos</strong> de experiência! 
+        </BaseText>
+        <BaseLink href="https://wa.me/message/CVQIECXMWBIPN1" target="_blank" class="link" variation="link-navyblueicon">
+            <img class="whatsapp" src={WhatsappImage} >Entre em contato
+        </BaseLink>
     </div>
 </section>
 
-  <style>
+<style>
     .hero-container {
-        @apply flex;
+        @apply 
+        bg-[url('../../assets/images/hero-image-mobile.webp')] bg-cover flex flex-col h-screen;
     }
 
-    .image-hero {
-        @apply hidden min-w-full h-screen;
+    .hero {
+        @apply flex flex-col gap-10 p-6 w-auto;
     }
 
-    .image-hero-mobile {
-        @apply flex w-full h-screen;
-    }
-
-    .image-hero-tablet {
-        @apply hidden w-full h-screen;
-    }
-
-    .header {
-        @apply bg-gray/[0.6] h-16 w-screen absolute top-0 flex items-center justify-start z-10;
-    }
-
-    .logo-hero {
-        @apply relative flex w-40 h-12 items-center ml-4;
-    }
-
-    .banner-hero {
-        @apply flex flex-col justify-between gap-10 absolute top-32 left-2;
-    }
-
-    .text-banner {
-        @apply flex flex-col gap-10 justify-start p-1.5;
-    }
-     
     .h1 {
-        @apply font-nova text-3xl text-neutral w-[250px];
+        @apply font-nova mt-14 text-3xl text-neutral;
+        text-shadow: 2px 2px #012840;
     }
 
     .p-hero {
-        @apply text-neutral text-sm w-[230px];
+        @apply 
+        font-ubuntu 
+        leading-snug 
+        max-w-[240px]
+        text-neutral 
+        text-xs;
+        text-shadow: 2px 1px #012840;
     }
 
     .strong {
-        @apply font-ubuntuBold font-bold;
+        @apply font-bold font-ubuntuBold; 
     }
 
-    .base-link {
-        @apply flex bg-navyBlue min-w-[140px] h-[40px] text-neutral font-ubuntuBold justify-center text-center items-center text-sm;
+    .link {
+        @apply 
+        bg-navyBlue 
+        cursor-pointer
+        flex
+        font-ubuntuBold
+        gap-2
+        hover:bg-neutral
+        hover:border-navyBlue 
+        hover:border-4
+        hover:duration-700
+        hover:opacity-70
+        hover:scale-110
+        hover:text-navyBlue
+        items-center 
+        justify-center 
+        text-center 
+        text-neutral 
+        text-xs;
+    }
+
+    .whatsapp {
+        @apply w-5;
     }
 
     @media (min-width: 450px) {
-    .image-hero-tablet {
-        @apply flex;
-    }
-   
-    .image-hero-mobile {
-        @apply hidden;
-    }
+        .hero-container {
+        @apply bg-[url('../../assets/images/hero-image-tablet.webp')]
     }
 
-    @media (min-width: 768px) {
-    .banner-hero, .text-banner {
-        @apply gap-14 top-40 left-6;
-    }
-
-    .header {
-        @apply h-20;
-    }
-
-    .logo-hero {
-        @apply w-52 h-16 ml-8;
-    }
-
-    .image-hero {
-        @apply flex;
-    }
-
-
-    .image-hero-tablet {
-        @apply hidden;
-    }
-
-    .h1 {
-        @apply text-4xl w-[500px];
+    .hero {
+        @apply max-w-[480px] mt-5 p-10 w-auto;
     }
 
     .p-hero {
-        @apply text-base w-[390px];
+        @apply max-w-[360px] text-sm;
     }
+}
 
-    .base-link {
-        @apply text-xs w-[180px] h-[45px];
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .banner-hero, .text-banner {
-        @apply gap-16 top-64;
-    }
-
-    .header {
-        @apply h-28;
-    }
-
-    .logo-hero {
-        @apply w-72 h-20 ml-8;
+@media (min-width: 768px) {
+    .hero {
+        @apply gap-14 max-w-[600px] p-14;
     }
 
     .h1 {
-        @apply text-5xl w-[700px];
+        @apply mt-5 text-4xl;
     }
 
     .p-hero {
-        @apply text-xl w-[580px];
+        @apply max-w-md text-base;
     }
 
-    .base-link {
-        @apply text-lg w-[250px] h-[60px];
-    }
-  }
-
-  @media (min-width: 1440px) {
-    .banner-hero, .text-banner {
-        @apply gap-16 top-56 left-20;
+    .link {
+        @apply text-sm w-52;
     }
 
-    .header {
-        @apply h-28; 
+    .whatsapp {
+        @apply w-6;
+    }
+}   
+
+@media (min-width: 1024px) {
+    .hero-container {
+        @apply bg-opacity-0 bg-[url('../../assets/images/hero-image.webp')];
     }
 
-    .logo-hero {
-        @apply w-72 h-20 ml-20;
+    .hero {
+        @apply gap-16 max-w-[950px] ml-10 p-14;
     }
 
     .h1 {
-        @apply text-[67px] w-[910px];
-    }
+        @apply leading-tight text-6xl mt-14; 
+   }
 
     .p-hero {
-        @apply text-[32px] w-[900px] leading-[50px];
+        @apply leading-snug max-w-3xl text-[26px];
     }
 
-    .base-link {
-        @apply text-xl w-[300px] h-[70px];
+    .link {
+        @apply gap-5 text-xl w-[300px] h-[70px];
     }
-  }
-  </style> -->
+
+    .whatsapp {
+        @apply w-10;
+    }
+}   
+</style>

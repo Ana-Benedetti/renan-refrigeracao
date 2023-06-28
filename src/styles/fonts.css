@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'NovaFlat';
-    src: url('../../public/fonts/NovaFlat/NovaFlat.ttf') format('woff');
+    src: url('../../fonts/NovaFlat/NovaFlat.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'Ubuntu';
-    src: url('../../public/fonts/Ubuntu/Ubuntu-Regular.ttf') format('woff');
+    font-family: 'Ubuntu-Regular';
+    src: url('../../fonts/Ubuntu/Ubuntu-Regular.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -16,7 +16,7 @@
 
   @font-face {
     font-family: 'Ubuntu-Bold';
-    src: url('../../public/fonts/Ubuntu/Ubuntu-Bold.ttf') format('woff');
+    src: url('../../fonts/Ubuntu/Ubuntu-Bold.ttf') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -24,7 +24,7 @@
 
   @font-face {
     font-family: 'Ubuntu-Light';
-    src: url('../../public/fonts/Ubuntu/Ubuntu-Light.ttf') format('woff');
+    src: url('../../fonts/Ubuntu/Ubuntu-Light.ttf') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
