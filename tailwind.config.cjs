@@ -4,7 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				nova: ['NovaFlat-Regular', 'ui-sans-serif'],
+				nova: ['NovaFlat', 'ui-sans-serif'],
 				ubuntu: ['Ubuntu-Regular', 'ui-sans-serif'],
 				ubuntuLight: ['Ubuntu-Light', 'ui-sans-serif'],
 				ubuntuBold: ['Ubuntu-Bold', 'ui-sans-serif'],

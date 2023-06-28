@@ -1,0 +1,137 @@
+---
+import { BaseLink, BaseText } from "../../components/base";
+import { TheNavBar } from "../../components/unique";
+import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
+
+---  
+<section class="hero-container">
+    <TheNavBar />
+    <div class="hero">
+        <BaseText tag="h1" class="h1" variation="h1">
+            Refrigeração e Climatização de qualidade é com a gente!
+        </BaseText>
+        <BaseText tag="p" class="p-hero" variation="p-hero">
+            Atendimento profisisonal especializado em Refrigeração e Climatização, soluções inteligentes para sua empresa e o conforto da sua família. <strong class="strong">12 anos</strong> de experiência! 
+        </BaseText>
+        <BaseLink href="https://wa.me/message/CVQIECXMWBIPN1" target="_blank" class="link" variation="link-navyblueicon">
+            <img class="whatsapp" src={WhatsappImage} >Entre em contato
+        </BaseLink>
+    </div>
+</section>
+
+<style>
+    .hero-container {
+        @apply 
+        bg-[url('../../assets/images/hero-image-mobile.webp')] bg-cover flex flex-col h-screen;
+    }
+
+    .hero {
+        @apply flex flex-col gap-10 p-6 w-auto;
+    }
+
+    .h1 {
+        @apply font-nova mt-14 text-3xl text-neutral;
+        text-shadow: 2px 2px #012840;
+    }
+
+    .p-hero {
+        @apply 
+        font-ubuntu 
+        leading-snug 
+        max-w-[240px]
+        text-neutral 
+        text-xs;
+        text-shadow: 2px 1px #012840;
+    }
+
+    .strong {
+        @apply font-bold font-ubuntuBold; 
+    }
+
+    .link {
+        @apply 
+        bg-navyBlue 
+        cursor-pointer
+        flex
+        font-ubuntuBold
+        gap-2
+        hover:bg-neutral
+        hover:border-navyBlue 
+        hover:border-4
+        hover:duration-700
+        hover:opacity-70
+        hover:scale-110
+        hover:text-navyBlue
+        items-center 
+        justify-center 
+        text-center 
+        text-neutral 
+        text-xs;
+    }
+
+    .whatsapp {
+        @apply w-5;
+    }
+
+    @media (min-width: 450px) {
+        .hero-container {
+        @apply bg-[url('../../assets/images/hero-image-tablet.webp')]
+    }
+
+    .hero {
+        @apply max-w-[480px] mt-5 p-10 w-auto;
+    }
+
+    .p-hero {
+        @apply max-w-[360px] text-sm;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero {
+        @apply gap-14 max-w-[600px] p-14;
+    }
+
+    .h1 {
+        @apply mt-5 text-4xl;
+    }
+
+    .p-hero {
+        @apply max-w-md text-base;
+    }
+
+    .link {
+        @apply text-sm w-52;
+    }
+
+    .whatsapp {
+        @apply w-6;
+    }
+}   
+
+@media (min-width: 1024px) {
+    .hero-container {
+        @apply bg-opacity-0 bg-[url('../../assets/images/hero-image.webp')];
+    }
+
+    .hero {
+        @apply gap-16 max-w-[950px] ml-10 p-14;
+    }
+
+    .h1 {
+        @apply leading-tight text-6xl mt-14; 
+   }
+
+    .p-hero {
+        @apply leading-snug max-w-3xl text-[26px];
+    }
+
+    .link {
+        @apply gap-5 text-xl w-[300px] h-[70px];
+    }
+
+    .whatsapp {
+        @apply w-10;
+    }
+}   
+</style>
