@@ -5,14 +5,19 @@ import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
 
 ---  
 <section class="hero-container">
-    <TheNavBar />
+    <TheNavBar class="navbar" />
     <div class="hero">
         <BaseText tag="h1" class="h1" variation="h1">
             Refrigeração e Climatização de qualidade é com a gente!
         </BaseText>
-        <BaseText tag="p" class="p-hero" variation="p-hero">
-            Atendimento profisisonal especializado em Refrigeração e Climatização, soluções inteligentes para sua empresa e o conforto da sua família. <strong class="strong">12 anos</strong> de experiência! 
-        </BaseText>
+        <div class="text-contaniner">            
+            <BaseText tag="p" class="p-hero" variation="p-hero">
+                Atendimento profisisonal especializado em Refrigeração e Climatização, soluções inteligentes para sua empresa e o conforto da sua família. <strong class="strong">12 anos</strong> de experiência! 
+            </BaseText>
+            <BaseText tag="p" class="p-hero" variation="p-hero">
+               <strong class="strong">12 anos</strong> de experiência! 
+            </BaseText>
+        </div>
         <BaseLink href="https://wa.me/message/CVQIECXMWBIPN1" target="_blank" class="link" variation="link-navyblueicon">
             <img class="whatsapp" src={WhatsappImage} >Entre em contato
         </BaseLink>
@@ -22,25 +27,29 @@ import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
 <style>
     .hero-container {
         @apply 
-        bg-[url('../../assets/images/hero-image-mobile.webp')] bg-cover flex flex-col h-screen;
+        bg-[url('../../assets/images/hero-image-mobile2.webp')] bg-cover flex flex-col h-screen justify-center min-h-[700px];
     }
 
     .hero {
-        @apply flex flex-col gap-10 p-6 w-auto;
+        @apply flex flex-col gap-10 p-6 w-auto bg-black min-h-[700px] bg-opacity-30 h-screen justify-center;
     }
 
     .h1 {
-        @apply font-nova mt-14 text-3xl text-neutral;
+        @apply font-nova text-4xl text-neutral max-w-[700px] leading-normal;
         text-shadow: 2px 2px #012840;
+    }
+
+    .text-contaniner {
+        @apply flex flex-col gap-4;
     }
 
     .p-hero {
         @apply 
         font-ubuntu 
         leading-snug 
-        max-w-[240px]
         text-neutral 
-        text-xs;
+        text-xl
+        max-w-[600px];
         text-shadow: 2px 1px #012840;
     }
 
@@ -65,12 +74,18 @@ import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
         items-center 
         justify-center 
         text-center 
-        text-neutral 
-        text-xs;
+        text-neutral;
     }
 
     .whatsapp {
-        @apply w-5;
+        @apply w-7
+        hover:fill-navyBlue;
+    }
+
+    @media (max-height: 600px) {
+        .h1 {
+        @apply mt-40;
+    }
     }
 
     @media (min-width: 450px) {
@@ -78,35 +93,10 @@ import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
         @apply bg-[url('../../assets/images/hero-image-tablet.webp')]
     }
 
-    .hero {
-        @apply max-w-[480px] mt-5 p-10 w-auto;
-    }
-
-    .p-hero {
-        @apply max-w-[360px] text-sm;
-    }
 }
 
 @media (min-width: 768px) {
-    .hero {
-        @apply gap-14 max-w-[600px] p-14;
-    }
-
-    .h1 {
-        @apply mt-5 text-4xl;
-    }
-
-    .p-hero {
-        @apply max-w-md text-base;
-    }
-
-    .link {
-        @apply text-sm w-52;
-    }
-
-    .whatsapp {
-        @apply w-6;
-    }
+    
 }   
 
 @media (min-width: 1024px) {
@@ -114,24 +104,22 @@ import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
         @apply bg-opacity-0 bg-[url('../../assets/images/hero-image.webp')];
     }
 
-    .hero {
-        @apply gap-16 max-w-[950px] ml-10 p-14;
+    .h1 {
+        @apply text-5xl;
     }
 
-    .h1 {
-        @apply leading-tight text-6xl mt-14; 
+   .p-hero {
+    @apply  text-2xl;
+   }
+}   
+
+@media (min-width: 1440px) {
+   .hero {
+    @apply w-[1400px] bg-opacity-0;
    }
 
-    .p-hero {
-        @apply leading-snug max-w-3xl text-[26px];
-    }
-
-    .link {
-        @apply gap-5 text-xl w-[300px] h-[70px];
-    }
-
-    .whatsapp {
-        @apply w-10;
-    }
-}   
+   .hero-container {
+    @apply items-center;
+   }
+} 
 </style>
