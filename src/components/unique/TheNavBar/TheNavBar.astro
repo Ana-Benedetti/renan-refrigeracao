@@ -1,66 +1,24 @@
 ---
 import Logo from "../../../assets/images/Logo.webp";
-import LogoMobile from "../../../assets/images/logo-mobile.webp";
-import LogoTablet from "../../../assets/images/logo-tablet.webp";
+
+const { class: className} = Astro.props;
+
+const dynamicClasses = [className, 'header'];
 ---
 
 <header class="header">
     <div class="renan-header">
-        <img src={LogoMobile} alt="Renan Refrigeração logo." title="Logo da Renan Refrigeração" class="logo_mobile" />
-        <img src={LogoTablet} alt="Renan Refrigeração logo." title="Logo da Renan Refrigeração" class="logo_tablet" />
         <img src={Logo} alt="Renan Refrigeração logo." title="Logo da Renan Refrigeração" class="logo" />
     </div>
 </header>
 
 <style>
     .header {
-        @apply flex justify-start items-center w-full h-16 bg-gray/[0.6];
+        @apply flex justify-start items-center w-full h-16 px-6 bg-gray/[0.6] absolute top-0;
     }
 
-    .logo_tablet, .logo {
-        @apply hidden;
-    }
-
-    .logo_mobile {
-        @apply ml-6;
-    }
-
-    @media (min-width: 450px) {
-        .header {
-            @apply h-20;
-        }
-
-        .logo_tablet {
-            @apply flex ml-10;
-        }
-
-        .logo_mobile {
-            @apply hidden;
-        }
-    }
-
-    @media (min-width: 768px) {
-       .logo_tablet {
-            @apply flex ml-14;
-        }
-
-        .logo_mobile {
-            @apply hidden;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .header {
-            @apply h-28;
-        } 
-
-        .logo {
-            @apply flex ml-24;
-        }
-
-        .logo_tablet {
-            @apply hidden;
-        }
+    .logo {
+        @apply max-w-[150px] min-w-[90px];
     }
 
 </style>
