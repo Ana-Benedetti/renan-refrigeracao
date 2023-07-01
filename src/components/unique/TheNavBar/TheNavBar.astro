@@ -7,8 +7,8 @@ const dynamicClasses = [className, 'header'];
 ---
 
 <header class="header">
-    <div class="renan-header">
-        <img src={Logo} alt="Renan Refrigeração logo." title="Logo da Renan Refrigeração" class="logo" />
+    <div class="renan_header">
+        <img src={Logo} alt="Renan Refrigeração logotipo" title="Logotipo da Renan Refrigeração" class="logo" />
     </div>
 </header>
 
@@ -21,4 +21,13 @@ const dynamicClasses = [className, 'header'];
         @apply max-w-[150px] min-w-[90px];
     }
 
+    @media (min-width: 1440px) {
+    .renan_header {
+        @apply flex items-center w-[1440px];
+   }
+
+   .logo {
+        @apply items-center;
+   }
+}   
 </style>
