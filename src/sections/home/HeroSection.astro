@@ -4,122 +4,88 @@ import { TheNavBar } from "../../components/unique";
 import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
 
 ---  
-<section class="hero-container">
+<section class="section_hero">
     <TheNavBar class="navbar" />
-    <div class="hero">
+    <div class="hero_container">
         <BaseText tag="h1" class="h1" variation="h1">
             Refrigeração e Climatização de qualidade é com a gente!
         </BaseText>
         <div class="text-contaniner">            
             <BaseText tag="p" class="p-hero" variation="p-hero">
-                Atendimento profisisonal especializado em Refrigeração e Climatização, soluções inteligentes para sua empresa e o conforto da sua família. <strong class="strong">12 anos</strong> de experiência! 
+                Atendimento profisisonal especializado em Refrigeração e Climatização, soluções inteligentes para sua empresa e o conforto da sua família.
             </BaseText>
             <BaseText tag="p" class="p-hero" variation="p-hero">
                <strong class="strong">12 anos</strong> de experiência! 
             </BaseText>
         </div>
-        <BaseLink href="https://wa.me/message/CVQIECXMWBIPN1" target="_blank" class="link" variation="link-navyblueicon">
+        <BaseLink href="https://wa.me/message/CVQIECXMWBIPN1" target="_blank" class="link" variation="link-navyblue">
             <img class="whatsapp" src={WhatsappImage} >Entre em contato
         </BaseLink>
     </div>
 </section>
 
 <style>
-    .hero-container {
+    .section_hero {
         @apply 
-        bg-[url('../../assets/images/hero-image-mobile2.webp')] bg-cover flex flex-col h-screen justify-center min-h-[700px];
+        bg-[url('../../assets/images/hero-image-mobile3.webp')] 
+        bg-cover 
+        flex 
+        flex-col 
+        h-screen 
+        justify-center 
+        min-h-[700px];
     }
 
-    .hero {
-        @apply flex flex-col gap-10 p-6 w-auto bg-black min-h-[700px] bg-opacity-30 h-screen justify-center;
-    }
-
-    .h1 {
-        @apply font-nova text-4xl text-neutral max-w-[700px] leading-normal;
-        text-shadow: 2px 2px #012840;
+    .hero_container {
+        @apply bg-black 
+        bg-opacity-30 
+        flex 
+        flex-col 
+        gap-16
+        h-screen 
+        justify-center
+        min-h-[700px] 
+        p-6;
     }
 
     .text-contaniner {
         @apply flex flex-col gap-4;
     }
 
-    .p-hero {
-        @apply 
-        font-ubuntu 
-        leading-snug 
-        text-neutral 
-        text-xl
-        max-w-[600px];
-        text-shadow: 2px 1px #012840;
-    }
-
     .strong {
         @apply font-bold font-ubuntuBold; 
     }
 
-    .link {
-        @apply 
-        bg-navyBlue 
-        cursor-pointer
-        flex
-        font-ubuntuBold
-        gap-2
-        hover:bg-neutral
-        hover:border-navyBlue 
-        hover:border-4
-        hover:duration-700
-        hover:opacity-70
-        hover:scale-110
-        hover:text-navyBlue
-        items-center 
-        justify-center 
-        text-center 
-        text-neutral;
-    }
-
     .whatsapp {
-        @apply w-7
-        hover:fill-navyBlue;
+        @apply hover:fill-navyBlue w-7;
     }
 
     @media (max-height: 600px) {
         .h1 {
-        @apply mt-40;
-    }
+            @apply mt-40;
+        }
     }
 
     @media (min-width: 450px) {
-        .hero-container {
-        @apply bg-[url('../../assets/images/hero-image-tablet.webp')]
+        .section_hero {
+            @apply bg-[url('../../assets/images/hero-image-tablet.webp')]
+        }
     }
 
-}
+    @media (min-width: 1024px) {
+        .section_hero {
+            @apply bg-opacity-0 
+            bg-[url('../../assets/images/hero-image.webp')];
+        }
+    }            
 
-@media (min-width: 768px) {
-    
-}   
+    @media (min-width: 1440px) {
+        .section_hero {
+            @apply items-center;
+        }
 
-@media (min-width: 1024px) {
-    .hero-container {
-        @apply bg-opacity-0 bg-[url('../../assets/images/hero-image.webp')];
-    }
-
-    .h1 {
-        @apply text-5xl;
-    }
-
-   .p-hero {
-    @apply  text-2xl;
-   }
-}   
-
-@media (min-width: 1440px) {
-   .hero {
-    @apply w-[1400px] bg-opacity-0;
-   }
-
-   .hero-container {
-    @apply items-center;
-   }
-} 
+        .hero_container {
+            @apply w-[1400px] bg-opacity-0;
+        }
+    } 
 </style>

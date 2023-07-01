@@ -34,25 +34,24 @@ const dynamicClasses = [`${tag}`, className, variation ? `is-${variation}` : ""]
 
   <style>
     .h1,
-    .is-h2-banner,
-    .is-p-banner,
-    .is-p-thebenedettifooter,
-    .is-p-theFooter,
-    .is-p-link,
-    .is-p-linkfooter,
-    .is-p-servicecard {
-        @apply relative text-navyBlue;
+    .h2-banner,
+    .p-banner,
+    .p-thebenedettifooter,
+    .p-theFooter,
+    .p-link,
+    .p-linkfooter,
+    .p-servicecard {
+        @apply relative text-neutral;
     }
 
     .h2,
     .h3,
     .p,
-    .span,
-    .is-p-actingcard,
-    .is-p-activelinknavbar,
-    .is-p-calltoaction,
-    .is-p-linknavbar,
-    .is-p-specialist {
+    .p-actingcard,
+    .p-activelinknavbar,
+    .p-calltoaction,
+    .p-linknavbar,
+    .p-specialist {
         @apply relative text-navyBlue;
     }
 
@@ -64,26 +63,40 @@ const dynamicClasses = [`${tag}`, className, variation ? `is-${variation}` : ""]
 
     .p,
     .span,
-    .is-h2-banner,
-    .is-p-actingcard,
-    .is-p-banner,
-    .is-p-calltoaction,
-    .is .is-p-hero,
-    .is-p-linknavbar,
-    .is-p-servicecard, 
-    .is-p-specialist,
-    .is-p-thebenedettifooter,
-    .is-p-thefooter {
+    .h2-banner,
+    .p-actingcard,
+    .p-banner,
+    .p-calltoaction,
+    .p-hero,
+    .p-linknavbar,
+    .p-servicecard, 
+    .p-specialist,
+    .P-thebenedettifooter,
+    .p-thefooter {
         @apply font-ubuntu;
     }
 
-    .is-p-hero {
-        @apply font-ubuntuLight leading-10 text-[32px];
+    .p-hero {
+        @apply 
+        font-ubuntuLight
+        leading-snug 
+        text-neutral 
+        text-xl
+        max-w-[601px];
+        text-shadow: 2px 1px #012840;
     }
-    
+
     .is-p-link,
     .is-p-activelinknavbar {
         @apply font-ubuntuBold;
+    }
+
+    .h1 {
+        @apply 
+        leading-tight
+        max-w-[850px]
+        text-4xl;
+        text-shadow: 2px 2px #012840;
     }
 
     .h2 {
@@ -94,18 +107,28 @@ const dynamicClasses = [`${tag}`, className, variation ? `is-${variation}` : ""]
         @apply text-3xl;
     }
 
-    .is-p-actingcard {
+    .p-actingcard {
         @apply text-xl leading-7;
     }
 
-    .is.p-banner {
+    .p-banner {
         @apply text-[28px] leading-10;
     }
 
-    .is-p-link,
-    .is-p-linkfooter,
-    .is-p-linknavbar,
-    .is-p-servicecard {
+    .p-link,
+    .p-linkfooter,
+    .p-linknavbar,
+    .p-servicecard {
         @apply text-[26px];
+    }
+
+    @media (min-width: 1024px) {
+      .h1 {
+          @apply leading-[56px] text-6xl;
+        }
+
+      .p-hero {
+          @apply text-2xl;
+        }
     }
   </style> 

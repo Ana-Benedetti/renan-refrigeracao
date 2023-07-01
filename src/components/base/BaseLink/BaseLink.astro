@@ -36,39 +36,42 @@ const dynamicClasses = [className, variation ? `is-${variation}` : ""];
   }
 
   .is-link-navyblue,
-  .is-link-navyblueicon,
-  .is-link-mediumgreen,
-  .is-link-whiteicon {
-    @apply w-fit
-    min-w-[150px]
-    justify-center	
-    rounded-xl
-    px-5
-    py-4	
-    text-center
-    font-ubuntuBold
-    text-xl 
-    transition-all 
+  .is-link-mediumgreen {
+    @apply 
+    active:shadow-none
+    bg-navyBlue 
+    cursor-pointer
     duration-300
     ease-in-out
+    flex
+    font-ubuntuBold
+    gap-2
+    hover:bg-neutral
+    hover:border-4
+    hover:border-navyBlue 
+    hover:duration-700
+    hover:opacity-70
+    hover:scale-110
     hover:shadow-[0px_4px_4px_rgba(0,0,0,0.25)]
-    active:shadow-none;
+    hover:text-navyBlue
+    items-center 
+    justify-center	
+    min-w-[150px]
+    px-5
+    py-4	
+    rounded-xl
+    text-center
+    text-neutral
+    text-xl 
+    transition-all 
+    w-fit;
   }
 
   .is-link-mediumgreen {
     @apply bg-mediumGreen;
   }
 
-  .is-link-navyblue,
-  .is-link-navyblueicon {
+  .is-link-navyblue {
     @apply bg-navyBlue;
   }
-
-  .is-link-whiteicon {
-    @apply bg-neutral
-    border-navyBlue
-    border-solid
-    opacity-70;
-  }
-
 </style>
