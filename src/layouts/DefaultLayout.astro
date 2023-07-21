@@ -1,66 +1,124 @@
 ---
-import DependenciesLayout from "./DependenciesLayout.astro";
+import DependenciesLayout from './DependenciesLayout.astro';
+import { TheFooter, TheNavBar, TheGTag } from '@UniqueComponents';
+import ScriptsLayout from './ScriptsLayout.astro';
+
+export interface Props {
+  title: string;
+  lang: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const props = {
+  title:
+    title ?? 'Renan Refrigeração | Serviços de Refrigeração e Climatização',
+  description:
+    description ??
+    'Procurando por montagem e manutenção de câmara fria, freezer, expositor, geladeira ou outros serviços de refrigeração? Solicite um orçamento agora mesmo!',
+};
 ---
 
+<!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="title" content="Renan Refrigeração | Serviços de Refrigeração e Climatização">
-    <meta name="description" content="Procurando por montagem e manutenção de câmara fria, freezer, expositor, geladeira ou outros serviços de refrigeração? Solicite um orçamento agora mesmo!">
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="sitemap" href="/sitemap-index.xml">
-    <title>Renan Refrigeração</title>
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-TZDQ7LS');
-    </script>
-  <!-- End Google Tag Manager -->
+    <ScriptsLayout />
+    <meta
+      http-equiv="Content-Type"
+      content="text/html; charset=utf-8"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="title"
+      content={props.title}
+    />
+    <meta
+      name="description"
+      content={props.description}
+    />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <link
+      rel="sitemap"
+      href="/sitemap-index.xml"
+    />
+    <title>{props.title}</title>
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://renanrefrigeracao.com.br" />
-    <meta property="og:title" content="Renan Refrigeração | Serviços de Refrigeração e Climatização" />
-    <meta property="og:description" content="Procurando por montagem e manutenção de câmara fria, freezer, expositor, geladeira ou outros serviços de refrigeração? Solicite um orçamento agora mesmo!" />
-    <meta property="og:image" content="https://renanrefrigeracao.com.br/renan-refrigeracao-share-thumb.png" />
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:url"
+      content="https://renanrefrigeracao.com.br"
+    />
+    <meta
+      property="og:title"
+      content={props.title}
+    />
+    <meta
+      property="og:description"
+      content={props.description}
+    />
+    <meta
+      property="og:image"
+      content="https://renanrefrigeracao.com.br/renan-refrigeracao-share-thumb.png"
+    />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://renanrefrigeracao.com.br" />
-    <meta property="twitter:title" content="Renan Refrigeração | Serviços de Refrigeração e Climatização" />
-    <meta property="twitter:description" content="Procurando por montagem e manutenção de câmara fria, freezer, expositor, geladeira ou outros serviços de refrigeração? Solicite um orçamento agora mesmo!" />
-    <meta property="twitter:image" content="https://renanrefrigeracao.com.br/renan-refrigeracao-share-thumb.png" />
+    <meta
+      property="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      property="twitter:url"
+      content="https://renanrefrigeracao.com.br"
+    />
+    <meta
+      property="twitter:title"
+      content="Renan Refrigeração | Serviços de Refrigeração e Climatização"
+    />
+    <meta
+      property="twitter:description"
+      content={props.description}
+    />
+    <meta
+      property="twitter:image"
+      content="https://renanrefrigeracao.com.br/renan-refrigeracao-share-thumb.png"
+    />
   </head>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDEL0CFP0E"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-CDEL0CFP0E');
-  </script>
-
   <body class="body">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZDQ7LS"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <TheGTag />
 
     <DependenciesLayout>
-
+      <TheNavBar />
       <main class="main">
         <slot />
       </main>
-
+      <TheFooter />
     </DependenciesLayout>
   </body>
 </html>
 
+<style>
+  body {
+    @apply flex min-h-screen flex-col items-center;
+  }
+
+  main {
+    @apply max-w-7xl flex-[1_0_auto] px-5;
+  }
+</style>
