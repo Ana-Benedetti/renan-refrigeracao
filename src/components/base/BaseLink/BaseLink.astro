@@ -1,17 +1,33 @@
 ---
-const { class: className, href, referrerpolicy, target, variation } = Astro.props;
+import type { HTMLAttributeReferrerPolicy } from './types';
 
-const dynamicClasses = [className, variation ? `is-${variation}` : ""];
+export interface Props {
+  class?: string;
+  variation?: string;
+  href: string;
+  referrerpolicy?: HTMLAttributeReferrerPolicy | null | undefined;
+  target?: string;
+}
+
+const {
+  class: className,
+  href,
+  referrerpolicy,
+  target,
+  variation,
+} = Astro.props;
+
+const dynamicClasses = [className, variation ? `is-${variation}` : ''];
 ---
 
 {
-  href && (
+  href && variation && (
     <a
       class:list={dynamicClasses}
       href={href}
-      referrerpolicy={referrerpolicy ?? "strict-origin-when-cross-origin"}
+      referrerpolicy={referrerpolicy ?? 'strict-origin-when-cross-origin'}
       rel="noopener"
-      target={target ?? "_self"}
+      target={target ?? '_self'}
     >
       <slot />
     </a>
@@ -19,59 +35,53 @@ const dynamicClasses = [className, variation ? `is-${variation}` : ""];
 }
 
 <style>
-  .is-link,
-  .is-link-white {
-    @apply font-ubuntu
-    drop-shadow-[2px_3px_2px_rgba(0,0,0,0.25)]
+  .is-blue,
+  .is-green,
+  .is-white,
+  .is-composed {
+    @apply font-ubuntuBold
+    text-sm
     transition-all
-    ease-in-out;
-  }
-
-  .is-link {
-    @apply text-navyBlue hover:font-ubuntuBold;
-  }
-
-  .is-link-white {
-    @apply text-white hover:font-ubuntuBold;
-  }
-
-  .is-link-navyblue,
-  .is-link-mediumgreen {
-    @apply 
-    active:shadow-none
-    bg-navyBlue 
-    cursor-pointer
-    duration-300
     ease-in-out
     flex
-    font-ubuntuBold
-    gap-2
-    hover:bg-neutral
-    hover:border-4
-    hover:border-navyBlue 
-    hover:duration-700
-    hover:opacity-70
-    hover:scale-110
-    hover:shadow-[0px_4px_4px_rgba(0,0,0,0.25)]
-    hover:text-navyBlue
-    items-center 
-    justify-center	
-    min-w-[150px]
-    px-5
-    py-4	
-    rounded-xl
-    text-center
-    text-neutral
-    text-xl 
-    transition-all 
+    justify-center
+    items-center
+    gap-3
     w-fit;
   }
 
-  .is-link-mediumgreen {
-    @apply bg-mediumGreen;
+  .is-blue,
+  .is-green,
+  .is-white {
+    @apply rounded-lg
+    px-5
+    py-3;
   }
 
-  .is-link-navyblue {
-    @apply bg-navyBlue;
+  .is-blue {
+    @apply bg-navyBlue
+    hover:bg-darkGreen
+    text-neutral;
+  }
+
+  .is-white {
+    @apply border-2
+    border-solid
+    border-navyBlue
+    bg-whiteOpacity
+    text-navyBlue
+    hover:text-neutral
+    hover:bg-navyBlue;
+  }
+
+  .is-green {
+    @apply bg-darkGreen
+    text-neutral
+    hover:bg-navyBlue;
+  }
+
+  .is-composed {
+    @apply hover:underline
+    text-navyBlue;
   }
 </style>
