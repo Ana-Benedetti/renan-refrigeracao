@@ -1,33 +1,168 @@
 ---
-import Logo from "../../../assets/images/Logo.webp";
-
-const { class: className} = Astro.props;
-
-const dynamicClasses = [className, 'header'];
+import { BaseLink, BaseButtonNav } from '@BaseComponents';
+import { ComposedLinks } from '@ComposedComponents';
+import { Logo, Whatsapp } from '@Assets';
 ---
 
-<header class="header">
-    <div class="renan_header">
-        <img src={Logo} alt="Renan Refrigeração logotipo" title="Logotipo da Renan Refrigeração" class="logo" />
-    </div>
-</header>
+<script>
+  const isNavBar = document.getElementById('isNavBar');
+  if (isNavBar) {
+    const toggle = document.querySelector('.js-toggle-navbar');
+
+    toggle?.addEventListener('click', () => toggleNavbar());
+
+    function toggleNavbar() {
+      const nav = document.querySelector('.nav-container');
+
+      if (nav) {
+        const isEntering = !nav.classList.contains('is-slide');
+
+        if (isEntering) {
+          nav.classList.remove('is-invisible');
+          nav.classList.toggle('is-slide');
+
+          setTimeout(() => {
+            nav.classList.toggle('is-mobile');
+          }, 200);
+          return;
+        }
+
+        nav.classList.toggle('is-invisible');
+
+        setTimeout(() => {
+          nav.classList.toggle('is-mobile');
+          nav.classList.toggle('is-slide');
+        }, 300);
+      }
+    }
+  }
+</script>
+
+<nav
+  class="nav-container"
+  id="isNavBar"
+>
+  <div class="nav">
+    <a href="/"
+      ><img
+        src={Logo}
+        alt="Renan Refrigeração logotipo"
+        title="Logotipo da Renan Refrigeração"
+        class="logo"
+      /></a
+    >
+
+    <ComposedLinks
+      variation="desktop-links-container"
+      class="composed-links"
+    />
+
+    <BaseLink
+      href="https://wa.me/message/CVQIECXMWBIPN1"
+      target="_blank"
+      variation="blue"
+      class="nav-button"
+    >
+      <img
+        class="whatsapp"
+        src={Whatsapp}
+      />Solicite um Orçamento
+    </BaseLink>
+
+    <BaseButtonNav class="menu-bar js-toggle-navbar" />
+  </div>
+</nav>
 
 <style>
-    .header {
-        @apply flex justify-start items-center w-full h-16 px-6 bg-gray/[0.6] absolute top-0;
+  .nav-container {
+    @apply fixed
+    z-50
+    flex 
+    h-[80px] 
+    w-screen
+    items-center
+    justify-around
+    bg-whiteOpacity
+    align-middle;
+    transition: height 0.3s ease-in-out;
+  }
+
+  .nav {
+    @apply flex       
+    w-full
+    max-w-7xl
+    items-center
+    justify-between
+    px-5
+    align-middle;
+  }
+
+  .whatsapp {
+    @apply hidden w-7;
+  }
+
+  .logo {
+    @apply fixed top-4 flex w-[170px];
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu-bar {
+    @apply fixed right-5 top-6 flex w-8 cursor-pointer;
+  }
+
+  .composed-links,
+  .nav-button {
+    @apply fixed left-[-100%] opacity-0;
+    transition: left 0.2s ease-in-out, opacity 0.3s ease-in;
+  }
+
+  .nav-container.is-slide .composed-links {
+    @apply left-1/4 w-1/2;
+  }
+
+  .nav-container.is-slide .nav {
+    @apply m-0 block;
+  }
+
+  .nav-container.is-slide .nav-button {
+    @apply left-1/2;
+  }
+
+  .nav-container.is-mobile {
+    @apply block h-full w-full pt-3 text-center;
+  }
+
+  .nav-container.is-mobile .composed-links {
+    @apply mt-[100px] flex opacity-100 items-center;
+  }
+
+  .nav-container.is-mobile .nav-button {
+    @apply absolute bottom-10 block translate-x-[-50%] opacity-100;
+    transition: opacity 0.3s ease-in;
+  }
+
+  .nav-container.is-invisible .composed-links,
+  .nav-container.is-invisible .nav-button {
+    @apply opacity-0;
+  }
+
+  @media (min-width: 1024px) {
+    .menu-bar {
+      @apply hidden;
     }
+
+    .whatsapp {
+    @apply flex;
+  }
 
     .logo {
-        @apply max-w-[150px] min-w-[90px];
+      @apply relative top-auto;
     }
 
-    @media (min-width: 1440px) {
-    .renan_header {
-        @apply flex items-center w-[1440px];
-   }
-
-   .logo {
-        @apply items-center;
-   }
-}   
+    .composed-links,
+    .nav-button {
+      @apply flex opacity-100 transition-all duration-100 ease-in-out;
+      position: initial;
+    }
+  }
 </style>

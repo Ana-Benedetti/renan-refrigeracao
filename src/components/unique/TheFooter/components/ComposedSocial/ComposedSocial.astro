@@ -1,0 +1,37 @@
+---
+import { SocialInstagram, SocialEmail, SocialWhatsapp } from '@Assets';
+---
+
+<div class="social-container">
+  <a
+    class="link"
+    href="https://www.instagram.com/renanrefrigeracaooficial/"
+    target="_blank"
+    rel="noopener"
+    ><SocialInstagram /></a
+  >
+  <a
+    class="link"
+    href="https://wa.me/message/CVQIECXMWBIPN1"
+    target="_blank"
+    rel="noopener"
+    ><SocialWhatsapp /></a
+  >
+  <a
+    class="link"
+    href="mailto:contato@renanrefrigeracao.com.br"
+    target="_blank"
+    rel="noopener"
+    ><SocialEmail /></a
+  >
+</div>
+
+<style>
+  .social-container {
+    @apply min-w-fit flex flex-wrap;
+  }
+
+  .link {
+    @apply w-16;
+  }
+</style>

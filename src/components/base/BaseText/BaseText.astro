@@ -61,7 +61,15 @@ const dynamicClasses = [
 
   .p,
   .span {
-    @apply font-ubuntu text-base;
+    @apply font-ubuntu;
+  }
+
+  .p {
+    @apply text-base;
+  }
+
+  .span {
+    @apply text-base;
   }
 
   .h1 {
@@ -83,6 +91,10 @@ const dynamicClasses = [
   @media (min-width: 1024px) {
     .h1 {
       @apply text-6xl;
+    }
+
+    .span {
+      @apply text-xl;
     }
   }
 </style>
