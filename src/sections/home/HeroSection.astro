@@ -24,6 +24,7 @@ import { SectionsLayout } from '@Layouts';
         <img
           class="whatsapp"
           src={Whatsapp}
+          alt="Ícone do Whatsapp"
         />Entre em contato
       </BaseLink>
 
@@ -60,7 +61,7 @@ import { SectionsLayout } from '@Layouts';
   .hero-container {
     @apply flex 
     flex-col 
-    gap-16
+    gap-8
     h-screen 
     text-center
     justify-center
@@ -97,6 +98,12 @@ import { SectionsLayout } from '@Layouts';
 
   .whatsapp {
     @apply w-7;
+  }
+
+  @media (min-width: 600px) {
+    .hero-container {
+      @apply gap-16
+    }
   }
 
   @media (min-width: 1024px) {
