@@ -1,13 +1,13 @@
 ---
-import { BaseLink, BaseText } from "../../components/base";
-import { TheNavBar } from "../../components/unique";
-import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
+import { BaseLink, BaseText, BaseTextTypes } from "@BaseComponents";
+import { TheNavBar } from "@UniqueComponents";
+import { Whatsapp } from "@Assets";
 
 ---  
 <section class="section_hero">
     <TheNavBar class="navbar" />
     <div class="hero_container">
-        <BaseText tag="h1" class="h1" variation="h1">
+        <BaseText tag={BaseTextTypes.TAGS.H1} variation="blue">
             Refrigeração e Climatização de qualidade é com a gente!
         </BaseText>
         <div>            
@@ -16,7 +16,7 @@ import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
             </BaseText>
         </div>
         <BaseLink href="https://wa.me/message/CVQIECXMWBIPN1" target="_blank" class="link" variation="link-navyblue">
-            <img class="whatsapp" src={WhatsappImage} >Entre em contato
+            <img class="whatsapp" src={Whatsapp} >Entre em contato
         </BaseLink>
     </div>
 </section>
@@ -49,15 +49,9 @@ import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
         @apply hover:fill-navyBlue w-7;
     }
 
-    @media (max-height: 600px) {
-        .h1 {
-            @apply mt-40;
-        }
-    }
-
     @media (min-width: 450px) {
         .section_hero {
-            @apply bg-[url('../../assets/images/hero-image-tablet.webp')]
+            @apply bg-[url('../../assets/images/hero-image-tablet.webp')];
         }
     }
 

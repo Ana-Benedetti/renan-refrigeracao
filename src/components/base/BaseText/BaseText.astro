@@ -1,134 +1,88 @@
 ---
+import { TAGS } from './types';
+
+export interface Props {
+  class?: string;
+  variation?: string;
+  tag?: TAGS;
+}
+
 const { class: className, tag, variation } = Astro.props;
 
-const dynamicClasses = [`${tag}`, className, variation ? `is-${variation}` : ""];
+const dynamicClasses = [
+  `${tag}`,
+  className,
+  variation ? `is-${variation}` : '',
+];
 ---
 
 {
-    tag === "p" ? (
-      <p class:list={dynamicClasses}>
-        <slot />
-      </p>
-    ) : tag === "h2" ? (
-      <h2 class:list={dynamicClasses}>
-        <slot />
-      </h2>
-    ) : tag === "h3" ? (
-      <h3 class:list={dynamicClasses}>
-        <slot />
-      </h3>
-    ) : tag === "span" ? (
-      <span class:list={dynamicClasses}>
-        <slot />
-      </span>
-    ) : tag === "h1" ? (
-      <h1 class:list={dynamicClasses}>
-        <slot />
-      </h1>
-    ) : (
-      <p class:list={dynamicClasses}>
-        <slot />
-      </p>
-    )
+  tag === TAGS.P ? (
+    <p class:list={dynamicClasses}>
+      <slot />
+    </p>
+  ) : tag === TAGS.H2 ? (
+    <h2 class:list={dynamicClasses}>
+      <slot />
+    </h2>
+  ) : tag === TAGS.H3 ? (
+    <h3 class:list={dynamicClasses}>
+      <slot />
+    </h3>
+  ) : tag === TAGS.SPAN ? (
+    <span class:list={dynamicClasses}>
+      <slot />
+    </span>
+  ) : tag === TAGS.H1 ? (
+    <h1 class:list={dynamicClasses}>
+      <slot />
+    </h1>
+  ) : (
+    <p class:list={dynamicClasses}>
+      <slot />
+    </p>
+  )
+}
+
+<style>
+  .h1,
+  .h2,
+  .h3,
+  .p,
+  .span {
+    @apply text-neutral;
   }
 
-  <style>
-    .h1,
-    .h2-banner,
-    .p-banner,
-    .p-thebenedettifooter,
-    .p-theFooter,
-    .p-link,
-    .p-linkfooter,
-    .p-servicecard {
-        @apply relative text-neutral;
-    }
+  .h1,
+  .h2,
+  .h3 {
+    @apply font-nova;
+  }
 
-    .h2,
-    .h3,
-    .p,
-    .p-actingcard,
-    .p-activelinknavbar,
-    .p-calltoaction,
-    .p-linknavbar,
-    .p-specialist {
-        @apply relative text-navyBlue;
-    }
+  .p,
+  .span {
+    @apply font-ubuntu text-base;
+  }
 
-    .h1,
-    .h2,
-    .h3 {
-        @apply font-nova;
-    }
+  .h1 {
+    @apply text-4xl;
+  }
 
-    .p,
-    .span,
-    .h2-banner,
-    .p-actingcard,
-    .p-banner,
-    .p-calltoaction,
-    .p-hero,
-    .p-linknavbar,
-    .p-servicecard, 
-    .p-specialist,
-    .P-thebenedettifooter,
-    .p-thefooter {
-        @apply font-ubuntu;
-    }
+  .h2 {
+    @apply text-4xl mb-5;
+  }
 
-    .p-hero {
-        @apply 
-        font-ubuntuLight
-        leading-snug 
-        text-neutral 
-        text-xl
-        max-w-[601px];
-        text-shadow: 2px 1px #012840;
-    }
+  .h3 {
+    @apply text-2xl;
+  }
 
-    .is-p-link,
-    .is-p-activelinknavbar {
-        @apply font-ubuntuBold;
-    }
+  .is-blue {
+    @apply text-navyBlue;
+  }
 
+  @media (min-width: 1024px) {
     .h1 {
-        @apply 
-        leading-tight
-        max-w-[850px]
-        text-4xl;
-        text-shadow: 2px 2px #012840;
+      @apply text-6xl;
     }
-
-    .h2 {
-        @apply text-[56px];
-    }
-
-    .h3 {
-        @apply text-3xl;
-    }
-
-    .p-actingcard {
-        @apply text-xl leading-7;
-    }
-
-    .p-banner {
-        @apply text-[28px] leading-10;
-    }
-
-    .p-link,
-    .p-linkfooter,
-    .p-linknavbar,
-    .p-servicecard {
-        @apply text-[26px];
-    }
-
-    @media (min-width: 1024px) {
-      .h1 {
-          @apply leading-[56px] text-6xl;
-        }
-
-      .p-hero {
-          @apply text-2xl;
-        }
-    }
-  </style> 
+  }
+</style>
