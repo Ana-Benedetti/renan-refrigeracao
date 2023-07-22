@@ -1,1 +1,1 @@
-export { default as ComposedLinks } from "./ComposedLinks.astro";
+export { default as ComposedLinks } from './ComposedLinks.astro';

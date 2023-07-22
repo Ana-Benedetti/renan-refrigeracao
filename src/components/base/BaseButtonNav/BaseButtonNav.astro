@@ -1,0 +1,66 @@
+---
+export interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+
+  hamburger?.addEventListener('click', function () {
+    hamburger.classList.toggle('active');
+  });
+</script>
+
+<div class:list={[className, 'flex justify-end']}>
+  <button
+    id="hamburger"
+    class="relative block h-8 w-8 focus:outline-none lg:hidden"
+  >
+    <span class="line top absolute w-4 bg-navyBlue"></span>
+    <span class="line middle absolute w-6 bg-navyBlue"></span>
+    <span class="line bottom absolute w-8 bg-navyBlue"></span>
+  </button>
+</div>
+
+<style>
+  #hamburger .line {
+    height: 2px;
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  #hamburger .top {
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 75%;
+  }
+
+  #hamburger .middle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  #hamburger .bottom {
+    bottom: 25%;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(0deg);
+    width: 75%;
+  }
+
+  #hamburger.active .top {
+    transform: translate(-55%, 5px) rotate(45deg);
+  }
+
+  #hamburger.active .middle {
+    opacity: 0;
+  }
+
+  #hamburger.active .bottom {
+    transform: translate(-55%, -8px) rotate(-45deg);
+  }
+</style>
