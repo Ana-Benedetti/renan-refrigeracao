@@ -13,31 +13,37 @@ import {
 const clients = [
   {
     icon: MarketIcon,
+    alt: "Imagem de uma barraca de mercado.",
     title: "Supermercado",
     paragraph: "A Refrigeração e Climatização adequadas são fundamentais para o sucesso do negócio. Ajuda a manter a qualidade dos alimentos e bebidas, aumenta a vida útil dos produtos e reduz perdas e custos."
   },
   {
     icon: HotelIcon,
+    alt: "Imagem de um prédio de Hotel.",
     title: "Hotéis e Pousadas",
     paragraph: "Seus hóspedes merecem passar só bons momentos enquanto curtem suas acomodações. Conte com nossos serviços para que a estadia de seus clientes seja sempre a mais segura e agradável!"
   },
   {
     icon: HouseIcon,
+    alt: "Imagem de uma Residência",
     title: "Residências",
     paragraph: "Oferecemos a você e sua família toda segurança ao prestar serviços de Refrigeração e Climatização: instalação e manutenção em ar-condicionado, geladeiras e freezer. Sua família merece o melhor!"
   },
   {
     icon: ShopIcon,
+    alt: "Imagem de uma pequeno estabelecimento de vendas.",
     title: "Pequenos Comércios",
     paragraph: "Investir na manutenção preventiva e corretiva dos equipamentos de Refrigeração é a chave do sucesso: garante a qualidade dos produtos, durabilidade dos equipamentos, satisfação e fidelidade dos clientes."
   },
   {
     icon: CompanyIcon,
+    alt: "Imagem de um prédio empresarial.",
     title: "Empresas e Escritórios",
     paragraph: "A Refrigeração e Climatização são essenciais, pois podem influenciar diretamente na concentração, qualidade do trabalho realizado,  produtividade e o bem-estar dos seus colaboradores."
   },
   {
     icon: IndustryIcon,
+    alt: "Imagem de um prédio industrial.",
     title: "Indústrias",
     paragraph: "Conte conosco para ter instalações profissionais de alto nível, que extraem a melhor performance e aumentam a vida útil dos equipamentos, além de reduzir custos operacioniais."
   },
@@ -51,15 +57,15 @@ const clients = [
 
   <div class="places-cards">
     {
-      clients.map(({icon, title, paragraph}) => (
+      clients.map(({icon, alt, title, paragraph}) => (
         <BaseCard class="client-card">
-          <img class="max-w-[64px] mb-5" src={icon} alt="Imagem ilustrativa de uma barraca de mercado.">
+          <img src={icon} alt={alt} class="card-image">
 
-          <BaseText class="is-blue text-center mb-5" tag={BaseTextTypes.TAGS.H3}>
+          <BaseText class="is-blue card-title" tag={BaseTextTypes.TAGS.H3}>
             {title}
           </BaseText>
 
-          <BaseText class="is-blue text-center max-w-[350px]" tag={BaseTextTypes.TAGS.P}>
+          <BaseText class="is-blue card-paragraph" tag={BaseTextTypes.TAGS.P}>
             {paragraph}          
           </BaseText>
         </BaseCard>  
@@ -90,6 +96,25 @@ const clients = [
     justify-center
     max-w-[100%]
   }
+
+  .card-image {
+    @apply
+    max-w-[64px]
+    mb-5
+  }
+
+  .card-title {
+    @apply
+    text-center
+    mb-5
+  }
+
+  .card-paragraph {
+    @apply
+    text-center
+    max-w-[350px]
+  }
+
 
   @media (min-width: 768px) {
     .places-cards {
