@@ -1,0 +1,71 @@
+---
+import { BaseText, BaseTextTypes, BaseLink } from "@BaseComponents";
+import { Whatsapp } from '@Assets';
+import { SectionsLayout } from "@Layouts";
+---
+
+<section class="reason-background">
+  <SectionsLayout class="reason-section">
+    <div class="content">
+      <BaseText class="reason-title" tag={BaseTextTypes.TAGS.H3}>
+        Por que Investir Em Refrigeração E Climatização Para O Seu Negócio?
+      </BaseText>
+    
+      <BaseText class="reason-paragraph" tag={BaseTextTypes.TAGS.P}>
+        A manutenção preventiva e corretiva dos sistemas de Refrigeração e Climatização garante uma experiência de compra segura e agradável à seus clientes.<br>
+        Isso é fundamental para aumentar suas vendas!
+      </BaseText>
+    
+      <BaseLink
+        href="#"
+        variation="blue"
+        class="reason-btn"
+      >
+        <img
+          class="whatsapp"
+          src={Whatsapp}
+          alt="Ícone do Whatsapp"
+        />Saiba Mais
+      </BaseLink>
+    </div>
+  </SectionsLayout>
+</section>
+
+<style>
+  .reason-background {
+    background-image: url('../../assets/images/marketbanner-image.webp');
+    @apply bg-cover bg-center
+  }
+  .reason-section {
+    @apply
+    flex
+    flex-col
+    h-screen
+    items-end
+    justify-center
+    min-h-[700px]
+  }
+
+  .content {
+    @apply
+    max-w-[570px]
+  }
+
+  .reason-title {
+    @apply text-4xl mb-12
+  }
+
+  .reason-paragraph {
+    @apply
+    max-w-[490px]
+    mb-12
+  }
+
+  .reason-btn {
+    @apply min-w-[195px]
+  }
+
+  .whatsapp {
+    @apply w-7;
+  }
+</style>
