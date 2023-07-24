@@ -1,12 +1,149 @@
 ---
+import { BaseText, BaseTextTypes } from "@BaseComponents";
 import { ComposedSocial } from "./components";
+import { LogoWhite } from "@Assets";
+import { SectionsLayout } from '@Layouts';
+
+const menuItems = [
+   {
+    text: "Início",
+    url: "#inicio"
+   },
+   {
+    text: "Quem atendemos",
+    url: "#clientes"
+   },
+   {
+    text: "Nossos Serviços",
+    url: "#servicos"
+   },
+   {
+    text: "Nosso Especialista",
+    url: "empresa"
+   },
+   {
+    text: "Blog",
+    url: "#"
+   },
+   {
+    text: "Contato",
+    url: "#contato"
+   },
+   {
+    text: "Área do Cliente",
+    url: "#"
+   },
+   {
+    text: "Política de Privacidade",
+    url: "#"
+   }
+];
 ---
-<footer class="footer">
-  <ComposedSocial />
+<footer>
+  <section class="footer">
+    <SectionsLayout class="footer-content">
+      <div class="logo-section">
+        <img class="logo" src={LogoWhite} alt="Logo da Empresa Renan Refrigeração">
+      </div>
+      
+      <div class="menu-section">
+        <ul class="menu-items">
+          {
+            menuItems.map(({text, url}) =>(
+              <li class="menu-item">
+                <a class="text" href={url}>
+                  {text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      
+      <ComposedSocial />
+    </SectionsLayout>
+  </section>
+
+  <section class="copy">
+    <BaseText class="text-center copy-text" tag={BaseTextTypes.TAGS.P}>
+      &copy; Todos os direitos reservados. Renan Refrigeração 2023. Desenvolvido por Ana Benedetti.
+    </BaseText>
+  </section>
 </footer>
 
 <style>
 .footer {
-  @apply h-52 bg-green-700 w-screen
+  @apply
+  bg-navyBlue
+  min-h-[430px]
+  w-screen
+  flex
+  items-center
+}
+
+.footer-content {
+  @apply
+  flex
+  flex-col
+  items-center
+  gap-10
+}
+
+.logo {
+  @apply
+  w-[270px]
+}
+
+.menu-items {
+  @apply
+  text-neutral
+  text-center
+}
+
+.menu-item {
+  @apply pt-4 mb-4
+}
+
+.copy {
+  @apply
+  bg-darkGreen
+  h-[100px]
+  flex
+  items-center
+  justify-center
+  px-5
+}
+
+.copy-text {
+  @apply
+  text-neutral
+}
+
+@media (min-width: 992px) {
+
+  .footer-content {
+    @apply
+    flex-row
+    justify-between
+    items-center
+  }
+
+  .menu-items {
+    column-count: 2;
+    @apply
+    text-left
+  }
+
+  .copy {
+    @apply
+    h-[70px]
+  }
+}
+
+@media (min-width: 1216px) {
+  .logo {
+    @apply
+    w-[340px]
+  }
 }
 </style>
