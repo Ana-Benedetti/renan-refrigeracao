@@ -86,7 +86,7 @@ const services = [
   .services-title {
     @apply
     text-center
-    mb-16
+    mb-16;
   }
 
   .services-cards {
@@ -94,10 +94,12 @@ const services = [
     gap-10
     grid
     grid-cols-1
-    place-items-center
+    place-items-center;
   }
 
-  .service-card { @apply relative }
+  .service-card { 
+    @apply relative;
+  }
 
   .card-image {
     @apply
@@ -117,7 +119,7 @@ const services = [
     items-center
     absolute
     right-[2px]
-    bottom-[4px]
+    bottom-[4px];
   }
 
   .card-content {
@@ -127,18 +129,18 @@ const services = [
     flex
     flex-col
     items-center
-    gap-[10px]
+    gap-[10px];
   }
 
   .card-paragraph {
     @apply
-    text-sm
+    text-sm;
   }
 
   .card-btn {
     @apply
     text-xs
-    hidden
+    hidden;
   }
 
   @media (min-width: 360px) {
@@ -147,34 +149,31 @@ const services = [
       h-[230px]
       w-[230px]
       right-[3px]
-      bottom-[7px]
+      bottom-[7px];
     }
 
     .card-paragraph {
       @apply
-      text-base
+      text-base;
     }
 
     .card-btn {
       @apply
-      text-sm
+      text-sm;
     }
   }
 
   @media (min-width: 768px) {
     .services-cards {
       @apply
-      grid-cols-2
-    }
-    .service-card {
-      
+      grid-cols-2;
     }
   }
 
   @media (min-width: 1300px) {
     .services-cards {
       @apply
-      grid-cols-3
+      grid-cols-3;
     }
   }
 </style>

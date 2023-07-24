@@ -77,14 +77,14 @@ const clients = [
 <style>
   .clients-title {
     @apply
-    mb-16
+    mb-16;
   }
   .places-cards {
     @apply
     gap-10
     grid
     grid-cols-1
-    place-items-center
+    place-items-center;
   }
 
   .client-card {
@@ -94,43 +94,44 @@ const clients = [
     h-auto
     items-center
     justify-center
-    max-w-[100%]
+    max-w-[100%];
   }
 
   .card-image {
     @apply
     max-w-[64px]
-    mb-5
+    mb-5;
   }
 
   .card-title {
     @apply
     text-center
-    mb-5
+    mb-5;
   }
 
   .card-paragraph {
     @apply
     text-center
-    max-w-[350px]
+    max-w-[350px];
   }
 
 
   @media (min-width: 768px) {
     .places-cards {
       @apply
-      grid-cols-2
+      grid-cols-2;
     }
+
     .client-card {
       @apply
-      h-[360px]
+      h-[360px];
     }
   }
 
   @media (min-width: 1300px) {
     .places-cards {
       @apply
-      grid-cols-3
+      grid-cols-3;
     }
   }
 

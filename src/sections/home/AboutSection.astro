@@ -34,7 +34,7 @@ const paragraphs = [
     <div class="content">
       {
         paragraphs.map(({ text }) => ( 
-          <BaseText class="is-blue team-paragraph" tag={BaseTextTypes.TAGS.P}>
+          <BaseText class="team-paragraph" variation="blue" tag={BaseTextTypes.TAGS.P}>
             {text}          
           </BaseText>
         ))
@@ -45,32 +45,37 @@ const paragraphs = [
 
 <style>
 
-  .team-title { @apply mb-16 }
+  .team-title { 
+    @apply mb-16; 
+  }
+
   .team-content {
     @apply
     flex
     flex-col
     gap-12
-    items-center
+    items-center;
   }
 
   .profile {
     @apply
     max-w-[420px]
-    w-full
+    w-full;
   }
 
   .content {
     @apply
-    max-w-[550px]
+    max-w-[550px];
   }
 
   .team-paragraph {
     @apply
-    mb-6
+    mb-6;
   }
 
   @media (min-width: 992px) {
-    .team-content { @apply flex-row }
+    .team-content { 
+      @apply flex-row;
+     }
   }
 </style>
