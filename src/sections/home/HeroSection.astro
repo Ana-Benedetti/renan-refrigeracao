@@ -4,13 +4,13 @@ import { Whatsapp, HeroBG } from '@Assets';
 import { SectionsLayout } from '@Layouts';
 ---
 
-<SectionsLayout class="section-hero">
-  <div class="hero-container">
-    <BaseText tag={BaseTextTypes.TAGS.H1}>
+<SectionsLayout class="section-hero" id="inicio">
+  <div class="hero-container" itemscope itemtype="http://schema.org/LocalBusiness">
+    <BaseText tag={BaseTextTypes.TAGS.H1} itemprop="name">
       Refrigeração e Climatização de qualidade é com a gente!
     </BaseText>
     <div class="hero-p">
-      <BaseText tag={BaseTextTypes.TAGS.SPAN}>
+      <BaseText tag={BaseTextTypes.TAGS.P} itemprop="description">
         Atendimento profisisonal especializado em Refrigeração e Climatização,
         soluções inteligentes para sua empresa e o conforto da sua família.
       </BaseText>
@@ -18,34 +18,38 @@ import { SectionsLayout } from '@Layouts';
 
     <div class="hero-btn-container">
       <BaseLink
-        href="#clientes"
+        href="https://wa.me/message/CVQIECXMWBIPN1"
         variation="blue"
+        itemprop="url"
+        target="_blank"
       >
         <img
           class="whatsapp"
           src={Whatsapp}
           alt="Ícone do Whatsapp"
+          itemprop="image"
         />Entre em contato
       </BaseLink>
 
       <BaseLink
-        href="https://wa.me/message/CVQIECXMWBIPN1"
-        target="_blank"
+        href="#clientes"
         variation="white"
         class="hero-white-button"
+        itemprop="url"
       >Saiba Mais
       </BaseLink>
     </div>
   </div>
 
-  <div class="empty-space"></div>
+  <div class="empty-space" aria-hidden="true"></div>
 
   <div class="hero-bg-container">
     <img
       src={HeroBG}
       class="hero-bg"
-      alt="Whatsapp"
+      alt="Imagem de um homen de costas com ferramentas de reparo para items de refrigeração."
       title=""
+      itemprop="image"
     />
   </div>
 </SectionsLayout>
@@ -81,16 +85,16 @@ import { SectionsLayout } from '@Layouts';
     @apply max-w-xl;
   }
 
+  .hero-p > p {
+    @apply text-xl
+  }
+
   .hero-white-button {
     @apply min-w-[195px];
   }
 
   .empty-space {
     @apply hidden p-48;
-  }
-
-  .hero-bg {
-    @apply absolute w-screen h-screen top-0 left-0 z-0 overflow-hidden object-cover;
   }
 
   .hero-bg {
