@@ -11,4 +11,9 @@ export { default as HouseIcon } from "./house.svg";
 export { default as ShopIcon } from "./shop.svg";
 export { default as CompanyIcon } from "./company.svg";
 export { default as IndustryIcon } from "./industry.svg";
-
+export { default as CamaraFria } from './service1-CamaraFria.webp';
+export { default as Balcao } from './service2-Balcao.webp';
+export { default as Limpeza } from './service3-Limpeza.webp';
+export { default as CargaTermica } from './service4-CargaTermica.webp';
+export { default as ArCondicionado } from './service5-ArCondicionado.webp';
+export { default as Geladeira } from './service6-Geladeira.webp';
