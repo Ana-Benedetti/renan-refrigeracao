@@ -1,0 +1,16 @@
+---
+import { SectionsLayout } from '@Layouts';
+import { BaseText, BaseTextTypes, BaseLink } from '@BaseComponents';
+--- 
+<SectionsLayout class="section-error">
+  <BaseText tag={BaseTextTypes.TAGS.H1} variation="blue">Página não encontrada</BaseText>
+  <BaseText>Desculpe, a página que procurava não está disponível no momento ou não existe.</BaseText>
+  <BaseLink href="#" variation="blue">Retornar</BaseLink>
+</SectionsLayout>
+
+
+<style>
+  .section-error {
+    @apply flex flex-col justify-center text-center gap-6 items-center h-screen;
+  }
+</style>
