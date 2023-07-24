@@ -19,24 +19,24 @@ const menuItems = [
    },
    {
     text: "Nosso Especialista",
-    url: "empresa"
+    url: "#empresa"
    },
-   {
-    text: "Blog",
-    url: "#"
-   },
+  //  {
+  //   text: "Blog",
+  //   url: "#"
+  //  },
    {
     text: "Contato",
     url: "#contato"
    },
-   {
-    text: "Área do Cliente",
-    url: "#"
-   },
-   {
-    text: "Política de Privacidade",
-    url: "#"
-   }
+  //  {
+  //   text: "Área do Cliente",
+  //   url: "#contato"
+  //  },
+  //  {
+  //   text: "Política de Privacidade",
+  //   url: "#contato"
+  //  }
 ];
 ---
 <footer>
@@ -66,7 +66,7 @@ const menuItems = [
 
   <section class="copy">
     <BaseText class="text-center copy-text" tag={BaseTextTypes.TAGS.P}>
-      &copy; Todos os direitos reservados. Renan Refrigeração 2023. Desenvolvido por Ana Benedetti.
+      &copy; Todos os direitos reservados. Renan Refrigeração 2023. Desenvolvido por <a href="https://guilherme.battoni.dev/" rel="noopener" target="_blank" class="battoni">Battoni Dev</a>.
     </BaseText>
   </section>
 </footer>
@@ -78,7 +78,7 @@ const menuItems = [
   min-h-[430px]
   w-screen
   flex
-  items-center
+  items-center;
 }
 
 .footer-content {
@@ -86,22 +86,26 @@ const menuItems = [
   flex
   flex-col
   items-center
-  gap-10
+  gap-10;
 }
 
 .logo {
   @apply
-  w-[270px]
+  w-[270px];
 }
 
 .menu-items {
   @apply
   text-neutral
-  text-center
+  text-center;
 }
 
 .menu-item {
-  @apply pt-4 mb-4
+  @apply pt-4 mb-4;
+}
+
+.battoni {
+  @apply text-[#C0E022];
 }
 
 .copy {
@@ -111,12 +115,12 @@ const menuItems = [
   flex
   items-center
   justify-center
-  px-5
+  px-5;
 }
 
 .copy-text {
   @apply
-  text-neutral
+  text-neutral;
 }
 
 @media (min-width: 992px) {
@@ -125,25 +129,26 @@ const menuItems = [
     @apply
     flex-row
     justify-between
-    items-center
+    items-center;
   }
 
   .menu-items {
     column-count: 2;
     @apply
-    text-left
+    text-left 
+    gap-16;
   }
 
   .copy {
     @apply
-    h-[70px]
+    h-[70px];
   }
 }
 
 @media (min-width: 1216px) {
   .logo {
     @apply
-    w-[340px]
+    w-[340px];
   }
 }
 </style>
