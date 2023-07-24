@@ -17,3 +17,4 @@ export { default as Limpeza } from './service3-Limpeza.webp';
 export { default as CargaTermica } from './service4-CargaTermica.webp';
 export { default as ArCondicionado } from './service5-ArCondicionado.webp';
 export { default as Geladeira } from './service6-Geladeira.webp';
+export { default as RenanProfile } from './Renan.webp';
