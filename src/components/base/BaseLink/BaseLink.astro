@@ -78,7 +78,11 @@ const dynamicClasses = [className, variation ? `is-${variation}` : ''];
   .is-green {
     @apply bg-darkGreen
     text-neutral
-    hover:bg-navyBlue;
+  }
+  .is-green:hover {
+    @apply
+    bg-whiteOpacity
+    text-navyBlue
   }
 
   .is-composed {
