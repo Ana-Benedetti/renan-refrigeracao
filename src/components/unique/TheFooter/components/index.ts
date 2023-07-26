@@ -1,1 +1,1 @@
-export * from './ComposedSocial'
+export * from './ComposedSocial';

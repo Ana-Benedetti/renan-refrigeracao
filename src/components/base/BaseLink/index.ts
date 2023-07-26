@@ -1,1 +1,1 @@
-export { default as BaseLink } from './BaseLink.astro'
+export { default as BaseLink } from './BaseLink.astro';

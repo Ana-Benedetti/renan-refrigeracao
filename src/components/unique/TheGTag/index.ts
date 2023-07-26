@@ -1,1 +1,1 @@
-export { default as TheGTag } from './TheGTag.astro'
+export { default as TheGTag } from './TheGTag.astro';

@@ -1,1 +1,1 @@
-export * from './ComposedLinks'
+export * from './ComposedLinks';
