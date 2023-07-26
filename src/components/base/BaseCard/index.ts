@@ -1,1 +1,1 @@
-export { default as BaseCard } from './BaseCard.astro';
+export { default as BaseCard } from './BaseCard.astro'

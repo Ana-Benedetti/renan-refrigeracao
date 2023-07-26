@@ -1,1 +1,1 @@
-export { default as TheNavBar } from './TheNavBar.astro';
+export { default as TheNavBar } from './TheNavBar.astro'
