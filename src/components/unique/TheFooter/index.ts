@@ -1,1 +1,1 @@
-export { default as TheFooter } from './TheFooter.astro'
+export { default as TheFooter } from './TheFooter.astro';
