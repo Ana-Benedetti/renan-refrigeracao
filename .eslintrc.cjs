@@ -4,7 +4,14 @@ module.exports = {
     {
       files: ['*.astro'],
       parser: 'astro-eslint-parser',
-      rules: {},
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro'],
+      },
+    },
+    {
+      files: ['*.ts'],
+      parser: '@typescript-eslint/parser',
     },
   ],
 };
