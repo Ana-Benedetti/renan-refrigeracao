@@ -1,0 +1,16 @@
+{
+  "eslint.validate": ["javascript", "javascriptreact", "astro"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.rulers": [80],
+  "files.insertFinalNewline": true,
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.documentSelectors": ["**/*.astro"]
+}
