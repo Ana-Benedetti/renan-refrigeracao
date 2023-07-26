@@ -1,41 +1,56 @@
 ---
-import { BaseText, BaseTextTypes } from "@BaseComponents";
+import { BaseText, BaseTextTypes } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
 import { RenanProfile } from '@Assets';
 
 const paragraphs = [
   {
-    text: "Me chamo Renan e trabalho há 12 anos executando projetos em instalações elétricas."
+    text: 'Me chamo Renan e trabalho há 12 anos executando projetos em instalações elétricas.',
   },
   {
-    text: "Me especializei em Eletromecânica Comercial, Refrigeração e Climatização, dando manutenção em máquinas de padaria, açougue, cozinha industrial,  balcões refrigerados e câmaras frias de supermercado."
+    text: 'Me especializei em Eletromecânica Comercial, Refrigeração e Climatização, dando manutenção em máquinas de padaria, açougue, cozinha industrial,  balcões refrigerados e câmaras frias de supermercado.',
   },
   {
-    text: "Atualmente fiz especialização na melhor escola de refrigeração da atualidade."
+    text: 'Atualmente fiz especialização na melhor escola de refrigeração da atualidade.',
   },
   {
-    text: "Meu objetivo é atender bem você, seu comércio ou sua empresa. Quero ajudá-lo a extrair o melhor desempenho do seu equipamento com um baixo custo energético/operacional."
+    text: 'Meu objetivo é atender bem você, seu comércio ou sua empresa. Quero ajudá-lo a extrair o melhor desempenho do seu equipamento com um baixo custo energético/operacional.',
   },
   {
-    text: "São 12 anos trabalhando para dar a você a segurança de que terá o melhor atendimento!!"
-  }
+    text: 'São 12 anos trabalhando para dar a você a segurança de que terá o melhor atendimento!!',
+  },
 ];
 ---
-<SectionsLayout class="team-section" id="empresa">
-  <BaseText class="is-blue text-center team-title" tag={BaseTextTypes.TAGS.H5}>
+
+<SectionsLayout
+  class="team-section"
+  id="empresa"
+>
+  <BaseText
+    class="is-blue text-center team-title"
+    tag={BaseTextTypes.TAGS.H5}
+  >
     Nosso Especialista
   </BaseText>
 
   <section class="team-content">
     <div class="profile">
-      <img src={RenanProfile} alt="Foto de perfil do Renan. Especialista da Renan Refrigeração." title="Nosso especialista">
+      <img
+        src={RenanProfile}
+        alt="Foto de perfil do Renan. Especialista da Renan Refrigeração."
+        title="Nosso especialista"
+      />
     </div>
-  
+
     <div class="content">
       {
-        paragraphs.map(({ text }) => ( 
-          <BaseText class="team-paragraph" variation="blue" tag={BaseTextTypes.TAGS.P}>
-            {text}          
+        paragraphs.map(({ text }) => (
+          <BaseText
+            class="team-paragraph"
+            variation="blue"
+            tag={BaseTextTypes.TAGS.P}
+          >
+            {text}
           </BaseText>
         ))
       }
@@ -44,38 +59,33 @@ const paragraphs = [
 </SectionsLayout>
 
 <style>
-
-  .team-title { 
-    @apply mb-16; 
+  .team-title {
+    @apply mb-16;
   }
 
   .team-content {
-    @apply
-    flex
+    @apply flex
     flex-col
     gap-12
     items-center;
   }
 
   .profile {
-    @apply
-    max-w-[420px]
+    @apply max-w-[420px]
     w-full;
   }
 
   .content {
-    @apply
-    max-w-[550px];
+    @apply max-w-[550px];
   }
 
   .team-paragraph {
-    @apply
-    mb-6;
+    @apply mb-6;
   }
 
   @media (min-width: 992px) {
-    .team-content { 
+    .team-content {
       @apply flex-row;
-     }
+    }
   }
 </style>

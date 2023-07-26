@@ -1,1 +1,1 @@
-export { default as BaseButtonNav } from './BaseButtonNav.astro';
+export { default as BaseButtonNav } from './BaseButtonNav.astro'

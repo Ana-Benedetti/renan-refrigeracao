@@ -1,25 +1,32 @@
 ---
-import { BaseText, BaseTextTypes, BaseLink } from "@BaseComponents";
-import { SectionsLayout } from "@Layouts";
+import { BaseText, BaseTextTypes, BaseLink } from '@BaseComponents';
+import { SectionsLayout } from '@Layouts';
 ---
 
 <section class="family-background">
   <SectionsLayout class="family-section">
     <div class="content">
-      <BaseText class="family-title" tag={BaseTextTypes.TAGS.H3}>
+      <BaseText
+        class="family-title"
+        tag={BaseTextTypes.TAGS.H3}
+      >
         Sua Família Merece Lembrar Só Dos Bons Momentos Em Casa
       </BaseText>
-    
-      <BaseText class="family-paragraph" tag={BaseTextTypes.TAGS.P}>
-        A Refrigeração e Climatização adequadas são fundamentais para garantir o conforto e a qualidade de vida de sua família.
+
+      <BaseText
+        class="family-paragraph"
+        tag={BaseTextTypes.TAGS.P}
+      >
+        A Refrigeração e Climatização adequadas são fundamentais para garantir o
+        conforto e a qualidade de vida de sua família.
       </BaseText>
-    
+
       <BaseLink
         href="https://wa.me/message/CVQIECXMWBIPN1"
         variation="blue"
         class="family-btn"
       >
-      Saiba Mais
+        Saiba Mais
       </BaseLink>
     </div>
   </SectionsLayout>
@@ -31,8 +38,7 @@ import { SectionsLayout } from "@Layouts";
   }
 
   .family-section {
-    @apply
-    flex
+    @apply flex
     flex-col
     h-screen
     items-start
@@ -41,8 +47,7 @@ import { SectionsLayout } from "@Layouts";
   }
 
   .content {
-    @apply
-    max-w-[570px];
+    @apply max-w-[570px];
   }
 
   .family-title {
@@ -50,8 +55,7 @@ import { SectionsLayout } from "@Layouts";
   }
 
   .family-paragraph {
-    @apply
-    max-w-[490px]
+    @apply max-w-[490px]
     mb-12;
   }
 

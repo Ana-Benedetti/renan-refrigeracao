@@ -1,17 +1,24 @@
 ---
-import {BaseText, BaseTextTypes, BaseLink } from "@BaseComponents";
+import { BaseText, BaseTextTypes, BaseLink } from '@BaseComponents';
 import { Whatsapp } from '@Assets';
 import { SectionsLayout } from '@Layouts';
 ---
 
-<SectionsLayout class="contact-section" id="contato">
-  <BaseText class="is-blue text-center" tag={BaseTextTypes.TAGS.H6}>
+<SectionsLayout
+  class="contact-section"
+  id="contato"
+>
+  <BaseText
+    class="is-blue text-center"
+    tag={BaseTextTypes.TAGS.H6}
+  >
     E aí, pronto para fazer seu orçamento?
   </BaseText>
 
   <BaseLink
     href="https://wa.me/message/CVQIECXMWBIPN1"
-    variation="blue">
+    variation="blue"
+  >
     <img
       class="whatsapp"
       src={Whatsapp}
@@ -24,15 +31,13 @@ import { SectionsLayout } from '@Layouts';
 
 <style>
   .contact-section {
-    @apply
-    flex
+    @apply flex
     flex-col
     items-center
     gap-16;
   }
-  
+
   .whatsapp {
     @apply w-7;
   }
 </style>
-

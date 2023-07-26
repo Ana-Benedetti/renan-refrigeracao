@@ -1,5 +1,5 @@
 ---
-import { BaseLink } from "@BaseComponents";
+import { BaseLink } from '@BaseComponents';
 
 export interface Props {
   class?: string;
@@ -8,28 +8,28 @@ export interface Props {
 
 const { class: className, variation } = Astro.props;
 
-const dynamicClasses = [className, variation ? `is-${variation}` : ""];
+const dynamicClasses = [className, variation ? `is-${variation}` : ''];
 
 const links = [
   {
-    label: "Início",
-    href: "#inicio",
+    label: 'Início',
+    href: '#inicio',
   },
   {
-    label: "Clientes",
-    href: "#clientes",
+    label: 'Clientes',
+    href: '#clientes',
   },
   {
-    label: "Serviços",
-    href: "#servicos",
+    label: 'Serviços',
+    href: '#servicos',
   },
   {
-    label: "Empresa",
-    href: "#empresa",
+    label: 'Empresa',
+    href: '#empresa',
   },
   {
-    label: "Contato",
-    href: "#contato",
+    label: 'Contato',
+    href: '#contato',
   },
 ];
 ---
@@ -38,7 +38,10 @@ const links = [
   {
     links.map(({ href, label }) => (
       <li class="link">
-        <BaseLink variation="composed" href={href}>
+        <BaseLink
+          variation="composed"
+          href={href}
+        >
           {label}
         </BaseLink>
       </li>

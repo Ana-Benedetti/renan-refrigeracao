@@ -1,69 +1,83 @@
 ---
-import { BaseText, BaseTextTypes, BaseCard, BaseLink } from "@BaseComponents";
-import { SectionsLayout } from "@Layouts";
+import { BaseText, BaseTextTypes, BaseCard, BaseLink } from '@BaseComponents';
+import { SectionsLayout } from '@Layouts';
 import {
   CamaraFria,
   Balcao,
   Limpeza,
   CargaTermica,
   ArCondicionado,
-  Geladeira
-} from "@Assets";
+  Geladeira,
+} from '@Assets';
 
 const services = [
   {
     image: CamaraFria,
-    alt: "Imagem de uma Camara Fria.",
-    content: "Instalação e Montagem de Câmaras Frias e Salas Climatizadas",
-    btnLink: ""
+    alt: 'Imagem de uma Camara Fria.',
+    content: 'Instalação e Montagem de Câmaras Frias e Salas Climatizadas',
+    btnLink: '',
   },
   {
     image: Balcao,
-    alt: "Imagem de um mercado com um balcão á frente.",
-    content: "Manutenção Corretiva de Expositores Refrigerados e Frigoríficos, e  Câmaras Frias",
-    btnLink: ""
+    alt: 'Imagem de um mercado com um balcão á frente.',
+    content:
+      'Manutenção Corretiva de Expositores Refrigerados e Frigoríficos, e  Câmaras Frias',
+    btnLink: '',
   },
   {
     image: Limpeza,
-    alt: "Imagem de items de limpeza de equipamentos de refrigeração.",
-    content: "Limpeza e Manutenção Preventiva em Sistemas Frigoríficos",
-    btnLink: ""
+    alt: 'Imagem de items de limpeza de equipamentos de refrigeração.',
+    content: 'Limpeza e Manutenção Preventiva em Sistemas Frigoríficos',
+    btnLink: '',
   },
   {
     image: CargaTermica,
-    alt: "Imagem de um homem com um computador na mão.",
-    content: "Dimensionamento de Carga Térmica",
-    btnLink: ""
+    alt: 'Imagem de um homem com um computador na mão.',
+    content: 'Dimensionamento de Carga Térmica',
+    btnLink: '',
   },
   {
     image: ArCondicionado,
-    alt: "Imagem de um homem concertando um Ar Condicionado.",
-    content: "Instalação, Manutenção e Limpeza de Ar Condicionado",
-    btnLink: ""
+    alt: 'Imagem de um homem concertando um Ar Condicionado.',
+    content: 'Instalação, Manutenção e Limpeza de Ar Condicionado',
+    btnLink: '',
   },
   {
     image: Geladeira,
-    alt: "Imagem de um homem carregando uma geladeira.",
-    content: "Manutenção de Freezer e Geladeira Doméstica",
-    btnLink: ""
+    alt: 'Imagem de um homem carregando uma geladeira.',
+    content: 'Manutenção de Freezer e Geladeira Doméstica',
+    btnLink: '',
   },
 ];
 ---
 
-<SectionsLayout class="services-section" id="servicos">
-  <BaseText class="is-blue services-title" tag={BaseTextTypes.TAGS.H4}>
+<SectionsLayout
+  class="services-section"
+  id="servicos"
+>
+  <BaseText
+    class="is-blue services-title"
+    tag={BaseTextTypes.TAGS.H4}
+  >
     Nossos Serviços
   </BaseText>
 
   <div class="services-cards">
     {
-      services.map(({image, alt, content, btnLink}) => (
+      services.map(({ image, alt, content, btnLink }) => (
         <BaseCard class="is-service service-card">
-          <img src={image} alt={alt} class="card-image">
+          <img
+            src={image}
+            alt={alt}
+            class="card-image"
+          />
 
           <div class="card-info">
             <article class="card-content">
-              <BaseText class="card-paragraph" tag={BaseTextTypes.TAGS.P}>
+              <BaseText
+                class="card-paragraph"
+                tag={BaseTextTypes.TAGS.P}
+              >
                 {content}
               </BaseText>
 
@@ -72,11 +86,11 @@ const services = [
                 variation="green"
                 class="card-btn"
               >
-              Saiba Mais
+                Saiba Mais
               </BaseLink>
             </article>
           </div>
-        </BaseCard>    
+        </BaseCard>
       ))
     }
   </div>
@@ -84,26 +98,23 @@ const services = [
 
 <style>
   .services-title {
-    @apply
-    text-center
+    @apply text-center
     mb-16;
   }
 
   .services-cards {
-    @apply
-    gap-10
+    @apply gap-10
     grid
     grid-cols-1
     place-items-center;
   }
 
-  .service-card { 
+  .service-card {
     @apply relative;
   }
 
   .card-image {
-    @apply
-    object-cover
+    @apply object-cover
     w-full;
     border-radius: 80px 80px 0 80px;
   }
@@ -111,8 +122,7 @@ const services = [
   .card-info {
     background: #012840f0;
     border-radius: 50px 50px 0 50px;
-    @apply
-    h-[170px]
+    @apply h-[170px]
     w-[170px]
     flex
     justify-center
@@ -123,8 +133,7 @@ const services = [
   }
 
   .card-content {
-    @apply
-    w-[140px]
+    @apply w-[140px]
     text-center
     flex
     flex-col
@@ -133,47 +142,40 @@ const services = [
   }
 
   .card-paragraph {
-    @apply
-    text-sm;
+    @apply text-sm;
   }
 
   .card-btn {
-    @apply
-    text-xs
+    @apply text-xs
     hidden;
   }
 
   @media (min-width: 360px) {
     .card-info {
-      @apply
-      h-[230px]
+      @apply h-[230px]
       w-[230px]
       right-[3px]
       bottom-[7px];
     }
 
     .card-paragraph {
-      @apply
-      text-base;
+      @apply text-base;
     }
 
     .card-btn {
-      @apply
-      text-sm;
+      @apply text-sm;
     }
   }
 
   @media (min-width: 768px) {
     .services-cards {
-      @apply
-      grid-cols-2;
+      @apply grid-cols-2;
     }
   }
 
   @media (min-width: 1300px) {
     .services-cards {
-      @apply
-      grid-cols-3;
+      @apply grid-cols-3;
     }
   }
 </style>

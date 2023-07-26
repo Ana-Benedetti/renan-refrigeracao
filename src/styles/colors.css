@@ -1,9 +1,9 @@
 :root {
---darkGreen: 2 73 89;
---gray: 217 217 217;
---lightGreen: 42 188 188;
---mediumGreen: 2 103 115;
---navyBlue:1 40 64;
---neutral: 242 236 207;
---white-opacity: #e8e8e8d1;
+  --darkGreen: 2 73 89;
+  --gray: 217 217 217;
+  --lightGreen: 42 188 188;
+  --mediumGreen: 2 103 115;
+  --navyBlue: 1 40 64;
+  --neutral: 242 236 207;
+  --white-opacity: #e8e8e8d1;
 }

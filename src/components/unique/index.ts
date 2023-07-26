@@ -1,3 +1,3 @@
-export * from "./TheFooter";
-export * from "./TheNavBar";
-export * from "./TheGTag";
+export * from './TheFooter'
+export * from './TheNavBar'
+export * from './TheGTag'

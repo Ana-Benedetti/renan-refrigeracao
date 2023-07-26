@@ -12,7 +12,7 @@
       "@Assets": ["src/assets"],
       "@Layouts": ["src/layouts"],
       "@Sections": ["src/sections"],
-      
+
       "@BaseComponents": ["src/components/base"],
       "@ComposedComponents": ["src/components/composed"],
       "@UniqueComponents": ["src/components/unique"]

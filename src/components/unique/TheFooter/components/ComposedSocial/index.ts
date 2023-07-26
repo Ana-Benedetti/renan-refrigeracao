@@ -1,1 +1,1 @@
-export { default as ComposedSocial } from "./ComposedSocial.astro";
+export { default as ComposedSocial } from './ComposedSocial.astro'

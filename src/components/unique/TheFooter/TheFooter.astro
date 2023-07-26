@@ -1,34 +1,34 @@
 ---
-import { BaseText, BaseTextTypes } from "@BaseComponents";
-import { ComposedSocial } from "./components";
-import { LogoWhite } from "@Assets";
+import { BaseText, BaseTextTypes } from '@BaseComponents';
+import { ComposedSocial } from './components';
+import { LogoWhite } from '@Assets';
 import { SectionsLayout } from '@Layouts';
 
 const menuItems = [
-   {
-    text: "Início",
-    url: "#inicio"
-   },
-   {
-    text: "Quem atendemos",
-    url: "#clientes"
-   },
-   {
-    text: "Nossos Serviços",
-    url: "#servicos"
-   },
-   {
-    text: "Nosso Especialista",
-    url: "#empresa"
-   },
+  {
+    text: 'Início',
+    url: '#inicio',
+  },
+  {
+    text: 'Quem atendemos',
+    url: '#clientes',
+  },
+  {
+    text: 'Nossos Serviços',
+    url: '#servicos',
+  },
+  {
+    text: 'Nosso Especialista',
+    url: '#empresa',
+  },
   //  {
   //   text: "Blog",
   //   url: "#"
   //  },
-   {
-    text: "Contato",
-    url: "#contato"
-   },
+  {
+    text: 'Contato',
+    url: '#contato',
+  },
   //  {
   //   text: "Área do Cliente",
   //   url: "#contato"
@@ -39,19 +39,28 @@ const menuItems = [
   //  }
 ];
 ---
+
 <footer>
   <section class="footer">
     <SectionsLayout class="footer-content">
       <div class="logo-section">
-        <img class="logo" src={LogoWhite} alt="Logo da Empresa Renan Refrigeração" title="Renan Refrigeração">
+        <img
+          class="logo"
+          src={LogoWhite}
+          alt="Logo da Empresa Renan Refrigeração"
+          title="Renan Refrigeração"
+        />
       </div>
-      
+
       <div class="menu-section">
         <ul class="menu-items">
           {
-            menuItems.map(({text, url}) =>(
+            menuItems.map(({ text, url }) => (
               <li class="menu-item">
-                <a class="text" href={url}>
+                <a
+                  class="text"
+                  href={url}
+                >
                   {text}
                 </a>
               </li>
@@ -59,96 +68,95 @@ const menuItems = [
           }
         </ul>
       </div>
-      
+
       <ComposedSocial />
     </SectionsLayout>
   </section>
 
   <section class="copy">
-    <BaseText class="text-center copy-text" tag={BaseTextTypes.TAGS.P}>
-      &copy; Todos os direitos reservados. Renan Refrigeração 2023. Desenvolvido por <a href="https://guilherme.battoni.dev/" rel="noopener" target="_blank" class="battoni">Battoni Dev</a>.
+    <BaseText
+      class="text-center copy-text"
+      tag={BaseTextTypes.TAGS.P}
+    >
+      &copy; Todos os direitos reservados. Renan Refrigeração 2023. Desenvolvido
+      por <a
+        href="https://guilherme.battoni.dev/"
+        rel="noopener"
+        target="_blank"
+        class="battoni"
+        >Battoni Dev</a
+      >.
     </BaseText>
   </section>
 </footer>
 
 <style>
-.footer {
-  @apply
-  bg-navyBlue
+  .footer {
+    @apply bg-navyBlue
   min-h-[430px]
   w-screen
   flex
   items-center;
-}
+  }
 
-.footer-content {
-  @apply
-  flex
+  .footer-content {
+    @apply flex
   flex-col
   items-center
   gap-10;
-}
+  }
 
-.logo {
-  @apply
-  w-[270px];
-}
+  .logo {
+    @apply w-[270px];
+  }
 
-.menu-items {
-  @apply
-  text-neutral
+  .menu-items {
+    @apply text-neutral
   text-center;
-}
+  }
 
-.menu-item {
-  @apply pt-4 mb-4;
-}
+  .menu-item {
+    @apply pt-4 mb-4;
+  }
 
-.battoni {
-  @apply text-[#C0E022];
-}
+  .battoni {
+    @apply text-[#C0E022];
+  }
 
-.copy {
-  @apply
-  bg-darkGreen
+  .copy {
+    @apply bg-darkGreen
   h-[100px]
   flex
   items-center
   justify-center
   px-5;
-}
+  }
 
-.copy-text {
-  @apply
-  text-neutral;
-}
+  .copy-text {
+    @apply text-neutral;
+  }
 
-@media (min-width: 992px) {
-
-  .footer-content {
-    @apply
-    flex-row
+  @media (min-width: 992px) {
+    .footer-content {
+      @apply flex-row
     justify-between
     items-center;
-  }
+    }
 
-  .menu-items {
-    column-count: 2;
-    @apply
-    text-left 
+    .menu-items {
+      column-count: 2;
+      @apply text-left 
     gap-16;
+    }
+
+    .copy {
+      @apply h-[70px];
+    }
   }
 
-  .copy {
-    @apply
-    h-[70px];
+  @media (min-width: 1216px) {
+    .logo {
+      @apply w-[340px];
+    }
   }
-}
-
-@media (min-width: 1216px) {
-  .logo {
-    @apply
-    w-[340px];
-  }
-}
 </style>

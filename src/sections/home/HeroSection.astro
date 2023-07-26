@@ -4,13 +4,26 @@ import { Whatsapp, HeroBG } from '@Assets';
 import { SectionsLayout } from '@Layouts';
 ---
 
-<SectionsLayout class="section-hero" id="inicio">
-  <div class="hero-container" itemscope itemtype="http://schema.org/LocalBusiness">
-    <BaseText tag={BaseTextTypes.TAGS.H1} itemprop="name">
+<SectionsLayout
+  class="section-hero"
+  id="inicio"
+>
+  <div
+    class="hero-container"
+    itemscope
+    itemtype="http://schema.org/LocalBusiness"
+  >
+    <BaseText
+      tag={BaseTextTypes.TAGS.H1}
+      itemprop="name"
+    >
       Refrigeração e Climatização de qualidade é com a gente!
     </BaseText>
     <div class="hero-p">
-      <BaseText tag={BaseTextTypes.TAGS.P} itemprop="description">
+      <BaseText
+        tag={BaseTextTypes.TAGS.P}
+        itemprop="description"
+      >
         Atendimento profisisonal especializado em Refrigeração e Climatização,
         soluções inteligentes para sua empresa e o conforto da sua família.
       </BaseText>
@@ -36,12 +49,17 @@ import { SectionsLayout } from '@Layouts';
         variation="white"
         class="hero-white-button"
         itemprop="url"
-      >Saiba Mais
+      >
+        Saiba Mais
       </BaseLink>
     </div>
   </div>
 
-  <div class="empty-space" aria-hidden="true"></div>
+  <div
+    class="empty-space"
+    aria-hidden="true"
+  >
+  </div>
 
   <div class="hero-bg-container">
     <img
@@ -86,7 +104,7 @@ import { SectionsLayout } from '@Layouts';
   }
 
   .hero-p > p {
-    @apply text-xl
+    @apply text-xl;
   }
 
   .hero-white-button {

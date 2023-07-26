@@ -1,13 +1,26 @@
 ---
 import { SectionsLayout } from '@Layouts';
 import { BaseText, BaseTextTypes, BaseLink } from '@BaseComponents';
---- 
-<SectionsLayout class="section-error">
-  <BaseText tag={BaseTextTypes.TAGS.H1} variation="blue">Página não encontrada</BaseText>
-  <BaseText>Desculpe, a página que procurava não está disponível no momento ou não existe.</BaseText>
-  <BaseLink href="#" variation="blue">Retornar</BaseLink>
-</SectionsLayout>
+---
 
+<SectionsLayout class="section-error">
+  <BaseText
+    tag={BaseTextTypes.TAGS.H1}
+    variation="blue"
+  >
+    Página não encontrada
+  </BaseText>
+  <BaseText>
+    Desculpe, a página que procurava não está disponível no momento ou não
+    existe.
+  </BaseText>
+  <BaseLink
+    href="#"
+    variation="blue"
+  >
+    Retornar
+  </BaseLink>
+</SectionsLayout>
 
 <style>
   .section-error {
