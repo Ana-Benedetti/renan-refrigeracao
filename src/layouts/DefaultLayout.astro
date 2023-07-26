@@ -5,7 +5,6 @@ import ScriptsLayout from './ScriptsLayout.astro';
 
 export interface Props {
   title: string;
-  lang: string;
   description: string;
 }
 
@@ -179,9 +178,11 @@ const props = {
 
     <DependenciesLayout>
       <TheNavBar />
+
       <main class="main">
         <slot />
       </main>
+
       <TheFooter />
     </DependenciesLayout>
     <style>
